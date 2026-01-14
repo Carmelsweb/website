@@ -1,11 +1,3 @@
-import { Section } from "../site/Section";
-import { usePageMeta } from "../site/usePageMeta";
-
-export function RecommendationsPage() {
-  usePageMeta({
-    title: "Recommendations",
-    description: "Recommendations for venues and trusted suppliers.",
-import React from "react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
@@ -32,10 +24,11 @@ export function RecommendationsPage() {
   });
 
   return (
-    <Section title="Recommendations">
-      <p>Recommendations for venues, music, and trusted suppliers across the west.</p>
-    </Section>
     <>
+      <Section title="Recommendations">
+        <p>Recommendations for venues, music, and trusted suppliers across the west.</p>
+      </Section>
+
       <Section title="Recommendations" kicker="Trusted partners">
         <p>
           Looking for local recommendations? We curate trusted venues, photographers, musicians, and ceremony enhancements across the West of Ireland.
@@ -47,7 +40,10 @@ export function RecommendationsPage() {
           {recommendations.map((item) => (
             <div
               key={item.title}
-              className={cx("rounded-2xl border p-6", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}
+              className={cx(
+                "rounded-2xl border p-6",
+                isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+              )}
             >
               <h2 className="text-xl font-semibold">{item.title}</h2>
               <p className={cx("mt-2", isDark ? "text-slate-300" : "text-slate-600")}>{item.copy}</p>
@@ -56,7 +52,12 @@ export function RecommendationsPage() {
           ))}
         </div>
 
-        <div className={cx("mt-8 rounded-3xl border p-6 sm:p-8", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+        <div
+          className={cx(
+            "mt-8 rounded-3xl border p-6 sm:p-8",
+            isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+          )}
+        >
           <h2 className="text-2xl font-semibold">Inquire now</h2>
           <p className={cx("mt-2", isDark ? "text-slate-300" : "text-slate-600")}>
             Tell us your ceremony date and style and we will share tailored recommendations.

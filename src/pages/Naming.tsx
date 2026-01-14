@@ -1,11 +1,3 @@
-import { Section } from "../site/Section";
-import { usePageMeta } from "../site/usePageMeta";
-
-export function NamingPage() {
-  usePageMeta({
-    title: "Naming ceremonies",
-    description: "Welcome a child with a ceremony that celebrates family, friends, and new beginnings.",
-import React from "react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
@@ -73,15 +65,22 @@ export function NamingPage() {
   });
 
   return (
-    <Section title="Naming ceremonies">
-      <p>A naming ceremony welcomes a child with words, promises, and joyful celebration.</p>
-    </Section>
     <>
       <Section title="Naming ceremonies">
+        <p>A naming ceremony welcomes a child with words, promises, and joyful celebration.</p>
+      </Section>
+
+      <Section title="Ceremony enhancements">
         <p>Naming ceremony enhancements may include any of the following:</p>
         <div className="mt-4 space-y-3">
           {namingEnhancements.map(({ title, body }) => (
-            <details key={title} className={cx("rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+            <details
+              key={title}
+              className={cx(
+                "rounded-xl border p-4",
+                isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+              )}
+            >
               <summary className="font-semibold cursor-pointer">{title}</summary>
               <p className="mt-2 whitespace-pre-line">{body}</p>
             </details>
@@ -90,7 +89,12 @@ export function NamingPage() {
       </Section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className={cx("rounded-3xl border p-6 sm:p-8", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+        <div
+          className={cx(
+            "rounded-3xl border p-6 sm:p-8",
+            isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+          )}
+        >
           <h2 className="text-2xl font-semibold">Inquire now</h2>
           <p className={cx("mt-2", isDark ? "text-slate-300" : "text-slate-600")}>
             Let us know your preferred date and the style of naming ceremony you envision.

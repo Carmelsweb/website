@@ -1,11 +1,3 @@
-import { Section } from "../site/Section";
-import { usePageMeta } from "../site/usePageMeta";
-
-export function ServicesPage() {
-  usePageMeta({
-    title: "Services",
-    description: "Explore ceremony services for weddings, vow renewals, naming ceremonies, and celebrations of life.",
-import React from "react";
 import { BookOpen, ChevronRight, Feather, Heart, Sparkles, Trees } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
@@ -35,10 +27,11 @@ export function ServicesPage() {
   });
 
   return (
-    <Section title="Services">
-      <p>Choose from legal weddings, commitment ceremonies, vow renewals, naming ceremonies, and celebrations of life.</p>
-    </Section>
     <>
+      <Section title="Services">
+        <p>Choose from legal weddings, commitment ceremonies, vow renewals, naming ceremonies, and celebrations of life.</p>
+      </Section>
+
       <Section title="Services" kicker="What we offer">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map(({ title, icon: Icon, to }) => (
@@ -53,7 +46,8 @@ export function ServicesPage() {
             >
               <Icon className="h-6 w-6 text-[var(--brand-teal)]" aria-hidden="true" />
               <p className="mt-4 font-semibold inline-flex items-center gap-2">
-                {title} <ChevronRight className="h-4 w-4 opacity-70 translate-x-0 group-hover:translate-x-0.5 transition-transform" />
+                {title}{" "}
+                <ChevronRight className="h-4 w-4 opacity-70 translate-x-0 group-hover:translate-x-0.5 transition-transform" />
               </p>
               <p className={cx("mt-1 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
                 Personalised, story-led ceremonies with thoughtful enhancements.
@@ -64,7 +58,12 @@ export function ServicesPage() {
       </Section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className={cx("rounded-3xl border p-6 sm:p-8", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+        <div
+          className={cx(
+            "rounded-3xl border p-6 sm:p-8",
+            isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+          )}
+        >
           <h2 className="text-2xl font-semibold">Ready to inquire?</h2>
           <p className={cx("mt-2", isDark ? "text-slate-300" : "text-slate-600")}>
             Share your date, venue, and ceremony style. We will confirm availability and guide you through next steps.
