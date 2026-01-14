@@ -1,11 +1,3 @@
-import { Section } from "../site/Section";
-import { usePageMeta } from "../site/usePageMeta";
-
-export function YourFuneralPage() {
-  usePageMeta({
-    title: "Your funeral",
-    description: "Plan a funeral ceremony that reflects your wishes and story.",
-import React from "react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
@@ -25,15 +17,14 @@ export function YourFuneralPage() {
   });
 
   return (
-    <Section title="Your funeral">
-      <p>Planning ahead lets your ceremony reflect your voice and values.</p>
-    </Section>
     <>
+      <Section title="Your funeral">
+        <p>Planning ahead lets your ceremony reflect your voice and values.</p>
+      </Section>
+
       <Section title="Writing your own funeral">
         <p>Pre-planning your own funeral is a new concept in Ireland.</p>
-        <p className="mt-4">
-          It is difficult to think about your own passing, but it can also be liberating and healing.
-        </p>
+        <p className="mt-4">It is difficult to think about your own passing, but it can also be liberating and healing.</p>
         <p className="mt-4">
           By ensuring your wishes are known to your loved ones, you are ensuring that your last farewell is exactly what you want.
         </p>
@@ -43,7 +34,12 @@ export function YourFuneralPage() {
       </Section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className={cx("rounded-3xl border p-6 sm:p-8", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+        <div
+          className={cx(
+            "rounded-3xl border p-6 sm:p-8",
+            isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+          )}
+        >
           <h2 className="text-2xl font-semibold">Inquire now</h2>
           <p className={cx("mt-2", isDark ? "text-slate-300" : "text-slate-600")}>
             We can help you document your wishes with clarity and care.

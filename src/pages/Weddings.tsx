@@ -1,11 +1,3 @@
-import { Section } from "../site/Section";
-import { usePageMeta } from "../site/usePageMeta";
-
-export function WeddingsPage() {
-  usePageMeta({
-    title: "Weddings",
-    description: "Ceremonies for legal weddings, commitment weddings, and elopements.",
-import React from "react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
@@ -89,10 +81,11 @@ export function WeddingsPage() {
   });
 
   return (
-    <Section title="Weddings">
-      <p>Your wedding ceremony is personal and heartfelt, tailored to your story and your people.</p>
-    </Section>
     <>
+      <Section title="Weddings">
+        <p>Your wedding ceremony is personal and heartfelt, tailored to your story and your people.</p>
+      </Section>
+
       <Section title="Weddings">
         <p>Your wedding, no matter the type, is a celebration of your unique love.</p>
         <p className="mt-4">
@@ -103,7 +96,12 @@ export function WeddingsPage() {
         </p>
 
         <div className="not-prose mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] items-center">
-          <figure className={cx("rounded-3xl border overflow-hidden", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+          <figure
+            className={cx(
+              "rounded-3xl border overflow-hidden",
+              isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+            )}
+          >
             <img
               src={sandBlending}
               alt="Sand blending ritual during a wedding ceremony"
@@ -119,17 +117,21 @@ export function WeddingsPage() {
             <p>
               Enhancements like sand blending, handfasting, and unity candles create visual moments that reflect your story and involve your guests.
             </p>
-            <p>
-              We help you choose rituals that feel natural, meaningful, and true to your relationship.
-            </p>
+            <p>We help you choose rituals that feel natural, meaningful, and true to your relationship.</p>
           </div>
         </div>
 
         <h2 className="text-xl font-semibold mt-10">Types of weddings</h2>
         <ul className="list-disc pl-6 space-y-2 mt-4">
-          <li><strong>Legal Weddings</strong></li>
-          <li><strong>Commitment Weddings</strong> (not legally binding)</li>
-          <li><strong>Elopement Weddings</strong> (legal or commitment; typically intimate)</li>
+          <li>
+            <strong>Legal Weddings</strong>
+          </li>
+          <li>
+            <strong>Commitment Weddings</strong> (not legally binding)
+          </li>
+          <li>
+            <strong>Elopement Weddings</strong> (legal or commitment; typically intimate)
+          </li>
         </ul>
 
         <div className="mt-6 space-y-4">
@@ -144,7 +146,13 @@ export function WeddingsPage() {
         <p className="mt-2">Wedding enhancements may include any of the following:</p>
         <div className="mt-4 space-y-3">
           {enhancements.map(({ title, body }) => (
-            <details key={title} className={cx("rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+            <details
+              key={title}
+              className={cx(
+                "rounded-xl border p-4",
+                isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+              )}
+            >
               <summary className="font-semibold cursor-pointer">{title}</summary>
               <p className="mt-2 whitespace-pre-line">{body}</p>
             </details>
@@ -153,7 +161,12 @@ export function WeddingsPage() {
       </Section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <div className={cx("rounded-3xl border p-6 sm:p-8", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+        <div
+          className={cx(
+            "rounded-3xl border p-6 sm:p-8",
+            isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+          )}
+        >
           <h2 className="text-2xl font-semibold">Inquire now</h2>
           <p className={cx("mt-2", isDark ? "text-slate-300" : "text-slate-600")}>
             Share your date, venue, and ceremony type so we can confirm availability.
