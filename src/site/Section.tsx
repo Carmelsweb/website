@@ -1,4 +1,3 @@
-import React from "react";
 import { useTheme } from "./theme";
 
 function cx(...parts: Array<string | false | null | undefined>) {
@@ -42,3 +41,4 @@ export function Section({
     </section>
   );
 }
+
