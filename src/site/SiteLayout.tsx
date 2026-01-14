@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Calendar, ChevronDown, Menu, X } from "lucide-react";
 import { useTheme } from "./theme";
+import paintedBackground from "../assets/bbf6a4b0-0ef3-409f-8025-2ad9df65a8d3.png";
 
 const palette = { navy: "#1c2233", teal: "#5c8a87", gold: "#d4a62a" };
 
@@ -13,14 +14,14 @@ function cx(...parts: Array<string | false | null | undefined>) {
 const primaryLinks = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Services", to: "/services" },
   { label: "Gallery", to: "/gallery" },
   { label: "How it works", to: "/how-it-works" },
   { label: "Recommendations", to: "/recommendations" },
   { label: "FAQ", to: "/faq" },
 ];
 
-const ceremonyLinks = [
+const serviceLinks = [
+  { label: "All services", to: "/services" },
   { label: "Weddings", to: "/weddings" },
   { label: "Vow renewals", to: "/vow-renewals" },
   { label: "Naming", to: "/naming" },
@@ -39,6 +40,30 @@ export function SiteLayout() {
   const { isDark } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
+  const backgroundStyle = useMemo(
+    () =>
+      ({
+        "--brand-navy": palette.navy,
+        "--brand-teal": palette.teal,
+        "--brand-gold": palette.gold,
+        backgroundImage: [
+          isDark
+            ? "linear-gradient(180deg, rgba(7, 10, 18, 0.74), rgba(7, 10, 18, 0.88))"
+            : "linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(238, 245, 249, 0.82))",
+          "radial-gradient(circle at 18% 12%, rgba(212, 166, 42, 0.2), transparent 46%)",
+          "radial-gradient(circle at 82% 18%, rgba(92, 138, 135, 0.18), transparent 48%)",
+          "radial-gradient(circle at 52% 76%, rgba(71, 111, 155, 0.16), transparent 56%)",
+          "conic-gradient(from 200deg at 50% 12%, rgba(92, 138, 135, 0.16), rgba(212, 166, 42, 0.2), rgba(71, 111, 155, 0.16), transparent)",
+          `url(${paintedBackground})`,
+        ].join(", "),
+        backgroundRepeat: "no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat",
+        backgroundSize: "100% 100%, 560px, 620px, 720px, 1400px, cover",
+        backgroundPosition: "center top, 12% 8%, 88% 10%, 50% 80%, 50% 10%, center",
+        backgroundAttachment: "fixed, fixed, fixed, fixed, fixed, fixed",
+        backgroundBlendMode: "normal, screen, screen, screen, screen, normal",
+      } as React.CSSProperties),
+    [isDark]
+  );
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
@@ -78,7 +103,7 @@ export function SiteLayout() {
   return (
     <div
       className={cx("min-h-screen", isDark ? "bg-slate-950 text-slate-100" : "bg-white text-slate-900")}
-      style={{ "--brand-navy": palette.navy, "--brand-teal": palette.teal, "--brand-gold": palette.gold } as React.CSSProperties}
+      style={backgroundStyle}
     >
       <div className="h-1 w-full bg-gradient-to-r from-[var(--brand-teal)] via-[var(--brand-gold)] to-[var(--brand-teal)]" />
 
@@ -102,32 +127,27 @@ export function SiteLayout() {
           </Link>
 
           <nav aria-label="Primary" className="hidden lg:flex items-center gap-6">
-            {primaryLinks.map((link) => (
-              <NavLink
-                key={link.to}
-                to={link.to}
-                className={({ isActive }) =>
-                  cx("text-sm font-medium transition-colors", navBase, isActive && "text-[var(--brand-teal)]")
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
-
             <div className="relative group">
-              <button
-                className={cx("text-sm font-medium transition-colors inline-flex items-center gap-1", navBase)}
+              <NavLink
+                to="/services"
+                className={({ isActive }) =>
+                  cx(
+                    "text-sm font-medium transition-colors inline-flex items-center gap-1",
+                    navBase,
+                    isActive && "text-[var(--brand-teal)]"
+                  )
+                }
                 aria-haspopup="true"
               >
-                Ceremonies <ChevronDown className="h-4 w-4" aria-hidden="true" />
-              </button>
+                Services <ChevronDown className="h-4 w-4" aria-hidden="true" />
+              </NavLink>
               <div
                 className={cx(
                   "absolute left-0 mt-3 w-56 rounded-2xl border p-2 shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto",
                   isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
                 )}
               >
-                {ceremonyLinks.map((link) => (
+                {serviceLinks.map((link) => (
                   <NavLink
                     key={link.to}
                     to={link.to}
@@ -144,6 +164,18 @@ export function SiteLayout() {
                 ))}
               </div>
             </div>
+
+            {primaryLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                className={({ isActive }) =>
+                  cx("text-sm font-medium transition-colors", navBase, isActive && "text-[var(--brand-teal)]")
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
           </nav>
 
           <div className="hidden lg:flex items-center gap-3">
@@ -190,10 +222,10 @@ export function SiteLayout() {
                 </div>
                 <div>
                   <p className={cx("text-xs uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
-                    Ceremonies
+                    Services
                   </p>
                   <div className="mt-2 grid grid-cols-2 gap-3">
-                    {ceremonyLinks.map((link) => (
+                    {serviceLinks.map((link) => (
                       <NavLink key={link.to} to={link.to} className={cx("text-sm font-medium", navBase)}>
                         {link.label}
                       </NavLink>
@@ -228,7 +260,14 @@ export function SiteLayout() {
         <Outlet />
       </main>
 
-      <footer className={cx("border-t mt-16", isDark ? "border-slate-800 bg-gradient-to-b from-slate-950 to-slate-950" : "border-slate-200 bg-gradient-to-b from-white to-slate-50")}>
+      <footer
+        className={cx(
+          "border-t mt-16",
+          isDark
+            ? "border-slate-800 bg-gradient-to-b from-slate-950 to-slate-950"
+            : "border-slate-200 bg-gradient-to-b from-[#e9f4ff] via-white to-[#f4f8ff]"
+        )}
+      >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid sm:grid-cols-2 gap-6 items-center">
           <div>
             <p className="font-semibold">West Coast Celebrants</p>
