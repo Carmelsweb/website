@@ -8,6 +8,7 @@ type PageMeta = {
 
 const SITE_NAME = "West Coast Celebrants";
 const DEFAULT_OG_IMAGE = "/og-logo.png";
+const BASE_URL = import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") || (typeof window !== "undefined" ? window.location.origin : "");
 
 function setMetaTag(attr: "name" | "property", key: string, value: string) {
   const selector = `meta[${attr}="${key}"]`;
@@ -35,7 +36,7 @@ export function usePageMeta({ title, description, path }: PageMeta) {
     const fullTitle = `${title} | ${SITE_NAME}`;
     document.title = fullTitle;
 
-    const canonical = `${window.location.origin}${path}`;
+    const canonical = `${BASE_URL}${path}`;
     setLinkTag("canonical", canonical);
 
     setMetaTag("name", "description", description);
@@ -44,11 +45,11 @@ export function usePageMeta({ title, description, path }: PageMeta) {
     setMetaTag("property", "og:description", description);
     setMetaTag("property", "og:type", "website");
     setMetaTag("property", "og:url", canonical);
-    setMetaTag("property", "og:image", `${window.location.origin}${DEFAULT_OG_IMAGE}`);
+    setMetaTag("property", "og:image", `${BASE_URL}${DEFAULT_OG_IMAGE}`);
 
     setMetaTag("name", "twitter:card", "summary_large_image");
     setMetaTag("name", "twitter:title", fullTitle);
     setMetaTag("name", "twitter:description", description);
-    setMetaTag("name", "twitter:image", `${window.location.origin}${DEFAULT_OG_IMAGE}`);
+    setMetaTag("name", "twitter:image", `${BASE_URL}${DEFAULT_OG_IMAGE}`);
   }, [title, description, path]);
 }
