@@ -1,4 +1,12 @@
-﻿import { Link } from "react-router-dom";
+import { Section } from "../site/Section";
+import { usePageMeta } from "../site/usePageMeta";
+
+export function RecommendationsPage() {
+  usePageMeta({
+    title: "Recommendations",
+    description: "Recommendations for venues and trusted suppliers.",
+import React from "react";
+import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/theme";
@@ -24,6 +32,9 @@ export function RecommendationsPage() {
   });
 
   return (
+    <Section title="Recommendations">
+      <p>Recommendations for venues, music, and trusted suppliers across the west.</p>
+    </Section>
     <>
       <Section title="Recommendations" kicker="Trusted partners">
         <p>
@@ -61,4 +72,3 @@ export function RecommendationsPage() {
     </>
   );
 }
-

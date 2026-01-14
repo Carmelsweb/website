@@ -1,4 +1,4 @@
-﻿import { Section } from "../site/Section";
+import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 
 export function CookiesPage() {
@@ -31,4 +31,3 @@ export function CookiesPage() {
     </Section>
   );
 }
-

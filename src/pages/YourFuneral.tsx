@@ -1,4 +1,12 @@
-﻿import { Link } from "react-router-dom";
+import { Section } from "../site/Section";
+import { usePageMeta } from "../site/usePageMeta";
+
+export function YourFuneralPage() {
+  usePageMeta({
+    title: "Your funeral",
+    description: "Plan a funeral ceremony that reflects your wishes and story.",
+import React from "react";
+import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/theme";
@@ -17,6 +25,9 @@ export function YourFuneralPage() {
   });
 
   return (
+    <Section title="Your funeral">
+      <p>Planning ahead lets your ceremony reflect your voice and values.</p>
+    </Section>
     <>
       <Section title="Writing your own funeral">
         <p>Pre-planning your own funeral is a new concept in Ireland.</p>
@@ -48,4 +59,3 @@ export function YourFuneralPage() {
     </>
   );
 }
-

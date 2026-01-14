@@ -1,4 +1,12 @@
-﻿import { Link } from "react-router-dom";
+import { Section } from "../site/Section";
+import { usePageMeta } from "../site/usePageMeta";
+
+export function NamingPage() {
+  usePageMeta({
+    title: "Naming ceremonies",
+    description: "Welcome a child with a ceremony that celebrates family, friends, and new beginnings.",
+import React from "react";
+import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/theme";
@@ -65,6 +73,9 @@ export function NamingPage() {
   });
 
   return (
+    <Section title="Naming ceremonies">
+      <p>A naming ceremony welcomes a child with words, promises, and joyful celebration.</p>
+    </Section>
     <>
       <Section title="Naming ceremonies">
         <p>Naming ceremony enhancements may include any of the following:</p>
@@ -95,4 +106,3 @@ export function NamingPage() {
     </>
   );
 }
-

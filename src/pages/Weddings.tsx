@@ -1,4 +1,12 @@
-﻿import { Link } from "react-router-dom";
+import { Section } from "../site/Section";
+import { usePageMeta } from "../site/usePageMeta";
+
+export function WeddingsPage() {
+  usePageMeta({
+    title: "Weddings",
+    description: "Ceremonies for legal weddings, commitment weddings, and elopements.",
+import React from "react";
+import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/theme";
@@ -81,6 +89,9 @@ export function WeddingsPage() {
   });
 
   return (
+    <Section title="Weddings">
+      <p>Your wedding ceremony is personal and heartfelt, tailored to your story and your people.</p>
+    </Section>
     <>
       <Section title="Weddings">
         <p>Your wedding, no matter the type, is a celebration of your unique love.</p>
@@ -158,4 +169,3 @@ export function WeddingsPage() {
     </>
   );
 }
-

@@ -1,14 +1,19 @@
-﻿import { Section } from "../site/Section";
+import { Section } from "../site/Section";
+import React from "react";
+import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 
 export function PaymentPolicyPage() {
   usePageMeta({
     title: "Payment policy",
+    description: "Deposit, balance, and payment schedule details.",
     description: "Booking fees, payment schedules, and invoicing details for West Coast Celebrants.",
     path: "/payment-policy",
   });
 
   return (
+    <Section title="Payment policy">
+      <p>Details on deposits, balances, and payment timing for bookings.</p>
     <Section title="Payment policy" kicker="Transparent payments">
       <p>
         This policy explains how payments are handled for West Coast Celebrants services. If anything in your invoice differs, the invoice terms apply.
@@ -41,4 +46,3 @@ export function PaymentPolicyPage() {
     </Section>
   );
 }
-

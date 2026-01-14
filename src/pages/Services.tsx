@@ -1,4 +1,12 @@
-﻿import { BookOpen, ChevronRight, Feather, Heart, Sparkles, Trees } from "lucide-react";
+import { Section } from "../site/Section";
+import { usePageMeta } from "../site/usePageMeta";
+
+export function ServicesPage() {
+  usePageMeta({
+    title: "Services",
+    description: "Explore ceremony services for weddings, vow renewals, naming ceremonies, and celebrations of life.",
+import React from "react";
+import { BookOpen, ChevronRight, Feather, Heart, Sparkles, Trees } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
@@ -27,6 +35,9 @@ export function ServicesPage() {
   });
 
   return (
+    <Section title="Services">
+      <p>Choose from legal weddings, commitment ceremonies, vow renewals, naming ceremonies, and celebrations of life.</p>
+    </Section>
     <>
       <Section title="Services" kicker="What we offer">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -69,4 +80,3 @@ export function ServicesPage() {
     </>
   );
 }
-
