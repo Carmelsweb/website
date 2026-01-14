@@ -4,6 +4,7 @@ import {
   Menu, X, Phone, Mail, Calendar, ChevronRight,
   Heart, Feather, BookOpen, Sparkles, Trees, Sun, Moon
 } from "lucide-react";
+import './App.css' // ensure this import is present so styles below apply
 
 // Palette
 const palette = { navy: "#1c2233", teal: "#5c8a87", gold: "#d4a62a" };
