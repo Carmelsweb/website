@@ -37,12 +37,12 @@ export function ContactPage() {
           >
             Read how it works
           </Link>
-          <div className={cx("mt-6 text-sm space-y-2", isDark ? "text-slate-300" : "text-slate-600")}>
+          <div className={cx("mt-6 text-sm space-y-2 break-words", isDark ? "text-slate-300" : "text-slate-600")}>
             <p className="inline-flex items-center gap-2">
-              <Phone className="h-4 w-4" aria-hidden="true" /> <a href="tel:+3530000000" className="underline underline-offset-2">Phone on request</a>
+              <Phone className="h-4 w-4" aria-hidden="true" /> <a href="tel:+353871302029" className="underline underline-offset-2 break-all">Phone on request</a>
             </p>
             <p className="inline-flex items-center gap-2">
-              <Mail className="h-4 w-4" aria-hidden="true" /> <a className="underline underline-offset-2" href="mailto:westcoastcelebrants@gmail.com">westcoastcelebrants@gmail.com</a>
+              <Mail className="h-4 w-4" aria-hidden="true" /> <a className="underline underline-offset-2 break-all" href="mailto:westcoastcelebrants@gmail.com">westcoastcelebrants@gmail.com</a>
             </p>
           </div>
         </div>
