@@ -1,4 +1,4 @@
-﻿import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Calendar, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../site/theme";

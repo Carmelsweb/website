@@ -27,10 +27,10 @@ export function HowItWorksPage() {
             <strong>Legal guidance:</strong> When you book a legal wedding ceremony with West Coast Celebrants, you will be guided through the process step by step. From giving legal notice to signing your marriage registration form, we ensure the legal marriage requirements in Ireland and Northern Ireland are adhered to.
           </li>
           <li>
-            <strong>Book your date:</strong> If you would like to proceed, we will send a form to capture the details for crafting your unique ceremony. A booking fee is due at this point.
+            <strong>Book your date:</strong> If you would like to proceed, we will send a booking form to capture the details for crafting your unique ceremony. A booking fee is due at this point to secure the date.
           </li>
           <li>
-            <strong>Co-create:</strong> We share readings, poems, and enhancement ideas. We work closely with you to express your values, culture, and traditions. Up to <strong>three revisions</strong> and <strong>one rehearsal</strong> (if requested) are included. Fees are due in full <strong>four weeks</strong> before the ceremony.
+            <strong>Co-create:</strong> We share readings, poems, and enhancement ideas. We work closely with you to express your values, culture, and traditions. Up to <strong>three revisions</strong> and <strong>one rehearsal</strong> (if requested) are included. Fees are due in full <strong>four weeks</strong> before the ceremony. Celebration of Life ceremonies are typically scheduled and drafted faster to meet families’ needs.
           </li>
         </ol>
       </Section>

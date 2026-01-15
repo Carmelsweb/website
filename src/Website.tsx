@@ -4,6 +4,18 @@ import {
   Menu, X, Phone, Mail, Calendar, ChevronRight,
   Heart, Feather, BookOpen, Sparkles, Trees, Sun, Moon
 } from "lucide-react";
+import carmelPortrait from "./assets/Web Site/Carmel Approved Photos/IMG-20250907-WA0006.jpg";
+import ringsOnPillow from "./assets/Rings.jpeg";
+import lovingCupPhoto from "./assets/Loving Cup.jpeg";
+import handfastingGuide from "./assets/WhatsApp Image 2026-01-15 at 19.17.20 (1).jpeg";
+import handfastingVows from "./assets/WhatsApp Image 2026-01-15 at 19.17.20 (2).jpeg";
+import handfastingSmile from "./assets/WhatsApp Image 2026-01-15 at 19.17.20 (6).jpeg";
+import handfastingCelebrate from "./assets/WhatsApp Image 2026-01-15 at 19.17.20 (7).jpeg";
+import namingSand from "./assets/Sand Blending.jpg";
+import namingCandle from "./assets/Unity Candle.jpg";
+import namingTree from "./assets/Tree.jpg";
+import namingBook from "./assets/SigingBook.jpg";
+import namingFlowers from "./assets/Giving of flowers.jpg";
 import './App.css' // ensure this import is present so styles below apply
 
 // Palette
@@ -189,22 +201,32 @@ export default function WestCoastCelebrantsModern() {
   const isDark = theme === "dark";
 
   // Card -> section anchors
-  const serviceToId: Record<string, string> = {
-    "Legal Weddings": "weddings",
-    "Commitment Weddings": "weddings",
-    "Elopement Weddings": "weddings",
-    "Naming Ceremonies": "naming",
-    "Vow Renewals": "vow-renewals",
-    "Celebration of Life": "celebration-of-life",
-  };
+const serviceToId: Record<string, string> = {
+  "Legal Weddings": "weddings",
+  "Commitment Weddings": "weddings",
+  "Elopement Weddings": "weddings",
+  "Naming Ceremonies": "naming",
+  "Vow Renewals": "vow-renewals",
+  "Celebration of Life": "celebration-of-life",
+  "Your Funeral": "your-funeral",
+};
 
-  // Replace with your real files (recommended: /public/gallery/*)
-  const galleryImages = [
-    { src: "/gallery/01.jpg", alt: "Cliffside elopement on the west coast" },
-    { src: "/gallery/02.jpg", alt: "Candle lighting during ceremony" },
-    { src: "/gallery/03.jpg", alt: "Celtic handfasting ribbons" },
-    { src: "/gallery/04.jpg", alt: "Vow renewal by the lake" },
-  ];
+// Replace with your real files (recommended: /public/gallery/*)
+const galleryImages = [
+  { src: "/gallery/01.jpg", alt: "Cliffside elopement on the west coast" },
+  { src: "/gallery/02.jpg", alt: "Candle lighting during ceremony" },
+  { src: "/gallery/03.jpg", alt: "Celtic handfasting ribbons" },
+  { src: "/gallery/04.jpg", alt: "Vow renewal by the lake" },
+];
+
+const weddingPhotos = [
+  { src: handfastingVows, alt: "Outdoor handfasting during vows" },
+  { src: handfastingGuide, alt: "Celebrant guiding colourful handfasting ribbons" },
+  { src: handfastingSmile, alt: "Groom smiling with hands wrapped in ribbons" },
+  { src: handfastingCelebrate, alt: "Couple raising ribbon-wrapped hands" },
+  { src: ringsOnPillow, alt: "Wedding rings on a satin pillow ready for ring warming" },
+  { src: lovingCupPhoto, alt: "Ceremonial loving cup with a daffodil" },
+];
 
   useEffect(() => {
     document.documentElement.style.scrollBehavior = prefersReduced ? "auto" : "smooth";
@@ -268,6 +290,7 @@ export default function WestCoastCelebrantsModern() {
             <NavLink href="#vow-renewals" isDark={isDark}>Vow renewals</NavLink>
             <NavLink href="#naming" isDark={isDark}>Naming</NavLink>
             <NavLink href="#celebration-of-life" isDark={isDark}>Celebration of life</NavLink>
+            <NavLink href="#your-funeral" isDark={isDark}>Your funeral</NavLink>
             <NavLink href="#privacy" isDark={isDark}>Privacy</NavLink>
             <NavLink href="#contact" isDark={isDark}>Contact</NavLink>
           </nav>
@@ -335,6 +358,7 @@ export default function WestCoastCelebrantsModern() {
                   ["Vow renewals", "#vow-renewals"],
                   ["Naming", "#naming"],
                   ["Celebration of life", "#celebration-of-life"],
+                  ["Your funeral", "#your-funeral"],
                   ["Privacy", "#privacy"],
                   ["Contact", "#contact"],
                 ].map(([label, href]) => (
@@ -393,7 +417,7 @@ export default function WestCoastCelebrantsModern() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className={cx("mt-6 text-lg max-w-prose", isDark ? "text-slate-200/90" : "text-slate-700/90")}
             >
-              West Coast Celebrants, set up by <strong>Carmel Fitzgerald</strong>, offers a complete celebrant service for your most meaningful moments across the West of Ireland. <strong>Welcoming people of all faiths, mixed faiths, semi faith, and people with no faith.</strong>
+              West Coast Celebrants, founded by <strong>Carmel Fitzgerald</strong>, offers heartfelt weddings, vow renewals, naming ceremonies, and celebrations of life across the West of Ireland. Inclusive of LGBTQ+ couples and all faiths or none, and supporting destination couples with guidance on notice periods and paperwork.
             </motion.p>
             <motion.div
               initial={prefersReduced ? false : { opacity: 0, y: 10 }}
@@ -422,8 +446,14 @@ export default function WestCoastCelebrantsModern() {
                 Explore services <ChevronRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </motion.div>
-            <div className={cx("mt-6 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
-              HSE-registered Wedding Solemniser, endorsed by FuturFaith Ministry.
+            <div className={cx("mt-6 space-y-2 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
+              <p>
+                HSE-registered Wedding Solemniser (<a className="underline" href="https://www2.hse.ie/services/civil-registration/marriage/" target="_blank" rel="noreferrer">learn more</a>), endorsed by{" "}
+                <a className="underline" href="https://www.futurfaith.com" target="_blank" rel="noreferrer">FuturFaith Ministry</a>.
+              </p>
+              <p>Based in Westport, serving Mayo, Galway, Sligo, Roscommon and beyond by arrangement.</p>
+              <p>Reply within 24 hours. Urgent Celebration of Life? Call +353 87 130 2029.</p>
+              <p>Official site: westcoastcelebrants.ie (to avoid confusion with .co.nz)</p>
             </div>
           </div>
         </section>
@@ -438,6 +468,28 @@ export default function WestCoastCelebrantsModern() {
           <p className="mt-4">
             Based in <strong>Westport, Co. Mayo</strong>, West Coast Celebrants are fully committed to making your special occasion unique and unforgettable by offering bespoke, personalized ceremonies that feel authentic and stylish to mark life's most meaningful moments.
           </p>
+          <p className="mt-4">
+            Serving Mayo, Galway, Sligo, Roscommon and beyond by arrangement. Destination couples welcome—guidance provided on notice periods and paperwork.
+          </p>
+          <figure className={cx("mt-6 rounded-3xl border overflow-hidden", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+            <a href={carmelPortrait} target="_blank" rel="noreferrer">
+              <div className="w-full aspect-[4/5]">
+                <img
+                  src={carmelPortrait}
+                  alt="Carmel Fitzgerald, celebrant"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </a>
+            <figcaption className={cx("px-4 py-3 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
+              Tap to view full size
+            </figcaption>
+          </figure>
+          <div className="mt-4 flex flex-wrap gap-3 text-sm">
+            <a className="underline underline-offset-2" href="https://www2.hse.ie/services/civil-registration/marriage/" target="_blank" rel="noreferrer">View HSE marriage guidance</a>
+            <a className="underline underline-offset-2" href="https://www.futurfaith.com" target="_blank" rel="noreferrer">FuturFaith Ministry</a>
+          </div>
         </Section>
 
         {/* SERVICES */}
@@ -445,13 +497,14 @@ export default function WestCoastCelebrantsModern() {
           {/* Cards (click to jump) */}
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { title: "Legal Weddings", icon: Heart },
-              { title: "Commitment Weddings", icon: Sparkles },
-              { title: "Elopement Weddings", icon: Feather },
-              { title: "Naming Ceremonies", icon: Trees },
-              { title: "Vow Renewals", icon: Heart },
-              { title: "Celebration of Life", icon: BookOpen },
-            ].map(({ title, icon: Icon }) => (
+              { title: "Legal Weddings", icon: Heart, description: "Fully legal ceremonies with guidance on notice and paperwork." },
+              { title: "Commitment Weddings", icon: Sparkles, description: "Celebrate your bond at home, even if you marry elsewhere." },
+              { title: "Elopement Weddings", icon: Feather, description: "Romantic, intimate vows for couples seeking adventure or privacy." },
+              { title: "Naming Ceremonies", icon: Trees, description: "Welcome a child with promises, readings, and keepsakes." },
+              { title: "Vow Renewals", icon: Heart, description: "Reaffirm your vows with family and friends gathered." },
+              { title: "Celebration of Life", icon: BookOpen, description: "Warm, dignified farewells that honour a life and comfort loved ones." },
+              { title: "Your Funeral", icon: BookOpen, description: "Plan your own ceremony in advance so your wishes are honoured." },
+            ].map(({ title, icon: Icon, description }) => (
               <button
                 key={title}
                 type="button"
@@ -467,7 +520,7 @@ export default function WestCoastCelebrantsModern() {
                   {title} <ChevronRight className="h-4 w-4 opacity-70 translate-x-0 group-hover:translate-x-0.5 transition-transform" />
                 </p>
                 <p className={cx("mt-1 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
-                  Personalised, story-led ceremonies with thoughtful enhancements.
+                  {description}
                 </p>
               </button>
             ))}
@@ -483,6 +536,7 @@ export default function WestCoastCelebrantsModern() {
                 "Naming Ceremonies",
                 "Vow Renewals",
                 "Celebration of Life Ceremonies",
+                "Your Funeral",
               ].map((label) => {
                 const key = label.replace(" Ceremonies", "");
                 return (
@@ -540,6 +594,27 @@ export default function WestCoastCelebrantsModern() {
             From hotel ballrooms to sunset beaches on the beautiful west coast, the top of Croagh Patrick or a medieval abbey,
             we will create a space where love is celebrated freely.
           </p>
+
+          <h3 className="text-xl font-semibold mt-10">Wedding moments</h3>
+          <p className={cx("mt-2 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>Tap any photo to view it full size.</p>
+          <div className="mt-4 grid gap-3 sm:grid-cols-3">
+            {weddingPhotos.map((photo, idx) => (
+              <a
+                key={idx}
+                href={photo.src}
+                target="_blank"
+                rel="noreferrer"
+                className={cx("block rounded-2xl overflow-hidden ring-1", isDark ? "ring-slate-800 hover:ring-slate-600" : "ring-slate-200 hover:ring-slate-400")}
+              >
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="w-full h-full object-cover aspect-[4/3]"
+                />
+              </a>
+            ))}
+          </div>
 
           <h3 className="text-xl font-semibold mt-10">Types of weddings</h3>
           <ul className="list-disc pl-6 space-y-4 mt-4">
@@ -751,20 +826,28 @@ This is an old and beautiful way for families to seal the union of both their tr
               {
                 title: "Rose Petal & Swaddling Blanket",
                 body: `Two-part enhancement involving rose petals, a swaddling blanket, and water. Guests place rose petals in water with silent wishes at the beginning. Towards the end, parents sprinkle rose water on baby's hands and feet, accompanied by silent wishes.`,
+                img: namingFlowers,
+                alt: "Rose petals placed in water for a naming ceremony",
               },
               {
                 title: "Dedication Candle",
                 body: `Symbolises passing love and wisdom from one generation to another. Family members light a family candle, and parents use it to light child's candle. Option to relight a special candle annually for the naming anniversary.`,
+                img: namingCandle,
+                alt: "Dedication candle glowing during ceremony",
               },
               {
                 title: "Memory Book",
                 body: `Guests write wishes and messages in a book for the baby.
 
 Some couples integrate Polaroid photos along with written blessings. A lasting memento for the child to read in the future.`,
+                img: namingBook,
+                alt: "Signing book ready for guests' messages",
               },
               {
                 title: "Sand Blending",
                 body: `Participants use coloured sand to symbolise a loving union between family members. Each colour represents different characteristics and aspirations. Placed towards the end of the ceremony for its symbolic significance.`,
+                img: namingSand,
+                alt: "Coloured sand blending ritual setup",
               },
               {
                 title: "Hand & Footprint Ceremony",
@@ -781,6 +864,8 @@ A cherished keepsake reflecting on the child's growth.`,
               {
                 title: "Planting a Tree/Shrub",
                 body: `Celebrate a new life by planting a small tree or shrub. Family members, especially older children or grandparents, can participate. The chosen plant can grow alongside the child over the years.`,
+                img: namingTree,
+                alt: "Tree planting enhancement",
               },
               {
                 title: "Bread & Salt Welcome",
@@ -790,10 +875,17 @@ A cherished keepsake reflecting on the child's growth.`,
                 title: "Grandma’s Cake",
                 body: `Incorporate a loved one's recipe for a naming cake. Discuss the significance of passing down love through family traditions. Best placed after closing words and before the celebratory moment.`,
               },
-            ].map(({ title, body }) => (
+            ].map(({ title, body, img, alt }) => (
               <details key={title} className={cx("rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
                 <summary className="font-semibold cursor-pointer">{title}</summary>
                 <p className="mt-2 whitespace-pre-line">{body}</p>
+                {img && (
+                  <div className="mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10 aspect-[4/3]">
+                    <a href={img} target="_blank" rel="noreferrer">
+                      <img src={img} alt={alt ?? title} className="w-full h-full object-cover" loading="lazy" />
+                    </a>
+                  </div>
+                )}
               </details>
             ))}
           </div>
@@ -827,18 +919,26 @@ A cherished keepsake reflecting on the child's growth.`,
               {
                 title: "Symbolism of Gifts",
                 body: `Before the funeral the family will decide on some items of importance or that held some special place in the life of the deceased. An example of some items that can be brought forward could be, say, a GAA jersey or a photo of the family that cared so deeply about them.`,
+                img: ringsOnPillow,
+                alt: "Symbolic keepsakes arranged for a ceremony",
               },
               {
                 title: "Lighting candles",
                 body: `For the Candlelight Vigil, the Minister will light a main candle at the start of the funeral or memorial. Afterwards, taking light from that same large candle, the minister will light several smaller, thinner candles. The main candle in this instance represents the light or life of the deceased, and the remaining candles act as a small representation of the many lives this person has touched in their lifetime.`,
+                img: namingCandle,
+                alt: "Candlelight during a ceremony",
               },
               {
                 title: "Planting a tree or shrub",
                 body: `Celebrate the life of your dearly departed loved one by planting a small tree or shrub. Family members and close friends can participate. The chosen tree or shrub will grow and bloom over the years and will be a gentle reminder of the love and times you once shared.`,
+                img: namingTree,
+                alt: "Tree planting ritual setup",
               },
               {
                 title: "Ceremony of The Rose",
                 body: `A vase is set up beside a framed photo on a separate table, and each person is given a rose to place in the vase as they bid farewell to their loved one, in silent remembering or in prayer. The mourners may also place the roses on the coffin itself.`,
+                img: namingFlowers,
+                alt: "Rose arrangement ready for ceremony",
               },
               {
                 title: "Bird Release",
@@ -847,11 +947,20 @@ A cherished keepsake reflecting on the child's growth.`,
 Releasing birds during a funeral ceremony can be a very moving experience, as a visual representation that love is stronger than death.
 
 This ritual is placed at the end of the ceremony on most occasions and can really help to uplift those in attendance.`,
+                img: handfastingCelebrate,
+                alt: "Outdoor ceremony moment with greenery backdrop",
               },
-            ].map(({ title, body }) => (
+            ].map(({ title, body, img, alt }) => (
               <details key={title} className={cx("rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
                 <summary className="font-semibold cursor-pointer">{title}</summary>
                 <p className="mt-2 whitespace-pre-line">{body}</p>
+                {img && (
+                  <div className="mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10 aspect-[4/3]">
+                    <a href={img} target="_blank" rel="noreferrer">
+                      <img src={img} alt={alt ?? title} className="w-full h-full object-cover" loading="lazy" />
+                    </a>
+                  </div>
+                )}
               </details>
             ))}
           </div>
@@ -873,11 +982,23 @@ This ritual is placed at the end of the ceremony on most occasions and can reall
           </details>
           <details className={cx("mb-3 rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
             <summary className="font-semibold cursor-pointer">Is there a legal notice period in Ireland?</summary>
-            <p className="mt-2">Yes — couples must give civil notice to the HSE in advance of a legal wedding. We will guide you through this process step-by-step.</p>
+            <p className="mt-2">Yes — couples must give at least <strong>3 months civil notice</strong> to the HSE before a legal wedding. We will guide you through this process step-by-step, including for destination couples.</p>
+          </details>
+          <details className={cx("mb-3 rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+            <summary className="font-semibold cursor-pointer">How quickly do you respond?</summary>
+            <p className="mt-2">We reply within 24 hours. For urgent Celebration of Life enquiries, please call +353 87 130 2029.</p>
+          </details>
+          <details className={cx("mb-3 rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+            <summary className="font-semibold cursor-pointer">Do you travel?</summary>
+            <p className="mt-2">Yes — Westport based, officiating across the West of Ireland (Mayo, Galway, Sligo, Roscommon and beyond by arrangement).</p>
+          </details>
+          <details className={cx("mb-3 rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
+            <summary className="font-semibold cursor-pointer">Do you work with LGBTQ+ couples?</summary>
+            <p className="mt-2">Absolutely. All couples are welcome — LGBTQ+, intercultural, interfaith, and secular ceremonies.</p>
           </details>
           <details className={cx("rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
-            <summary className="font-semibold cursor-pointer">Do you travel?</summary>
-            <p className="mt-2">Yes — Westport based, officiating across the West of Ireland (Mayo, Galway, Sligo and beyond by arrangement).</p>
+            <summary className="font-semibold cursor-pointer">How fast can a Celebration of Life be arranged?</summary>
+            <p className="mt-2">We prioritise these enquiries and draft quickly. Memorial services can also be planned weeks or months after a passing.</p>
           </details>
         </Section>
 
@@ -892,6 +1013,9 @@ This ritual is placed at the end of the ceremony on most occasions and can reall
         {/* CONTACT */}
         <Section id="contact" title="Check availability" kicker="Get in touch" isDark={isDark}>
           <p>Based in Westport, Co. Mayo, officiating across the West of Ireland.</p>
+          <p className={cx("mt-2 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
+            We reply within 24 hours. For urgent Celebration of Life enquiries, please call.
+          </p>
           <div className="mt-8 grid sm:grid-cols-2 gap-6">
             <div className={cx("rounded-3xl border p-6 shadow-sm", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
               <h3 className="font-semibold text-lg">Quick enquiry</h3>
@@ -910,7 +1034,7 @@ This ritual is placed at the end of the ceremony on most occasions and can reall
                 Read how it works <ChevronRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <div className={cx("mt-6 text-sm space-y-2", isDark ? "text-slate-300" : "text-slate-600")}>
-                <p className="inline-flex items-center gap-2"><Phone className="h-4 w-4" aria-hidden="true" /> <a href="tel:+353871302029" className="underline underline-offset-2">Phone on request</a></p>
+                <p className="inline-flex items-center gap-2"><Phone className="h-4 w-4" aria-hidden="true" /> <a href="tel:+353871302029" className="underline underline-offset-2">+353 87 130 2029</a></p>
                 <p className="inline-flex items-center gap-2"><Mail className="h-4 w-4" aria-hidden="true" /> <a className="underline underline-offset-2" href="mailto:westcoastcelebrants@gmail.com">westcoastcelebrants@gmail.com</a></p>
               </div>
             </div>

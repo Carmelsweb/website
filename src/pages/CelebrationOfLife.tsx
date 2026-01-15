@@ -2,6 +2,11 @@
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/theme";
+import ringsOnPillow from "../assets/Rings.jpeg";
+import candleImg from "../assets/Unity Candle.jpg";
+import treeImg from "../assets/Tree.jpg";
+import flowersImg from "../assets/Giving of flowers.jpg";
+import handfastingCelebrate from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (7).jpeg";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -11,27 +16,40 @@ const rituals = [
   {
     title: "Symbolism of Gifts",
     body:
-      "Before the funeral the family will decide on some items of importance or that held some special place in the life of the deceased. Examples include a GAA jersey or a photo of the family.",
+      "Before the funeral the family will decide on some items of importance or that held some special place in the life of the deceased. An example of some items that can be brought forward could be a GAA jersey or a photo of the family that cared so deeply about them.",
+    img: ringsOnPillow,
+    alt: "Symbolic keepsakes arranged for a ceremony",
   },
   {
     title: "Lighting candles",
     body:
-      "The minister lights a main candle at the start of the funeral or memorial. Afterwards, taking light from that candle, the minister lights several smaller candles. The main candle represents the life of the deceased, and the remaining candles represent the many lives they touched.",
+      "For the Candlelight Vigil, the minister will light a main candle at the start of the funeral or memorial. Afterwards, taking light from that same large candle, the minister will light several smaller, thinner candles. The main candle in this instance represents the light or life of the deceased, and the remaining candles act as a small representation of the many lives this person has touched in their lifetime.",
+    img: candleImg,
+    alt: "Candlelight during a ceremony",
   },
   {
     title: "Planting a tree or shrub",
     body:
-      "Celebrate the life of your loved one by planting a small tree or shrub. Family members and close friends can participate. The chosen tree or shrub will grow and bloom over the years and will be a gentle reminder of the love and times you shared.",
+      "Celebrate the life of your dearly departed loved one by planting a small tree or shrub. Family members and close friends can participate. The chosen tree or shrub will grow and bloom over the years and will be a gentle reminder of the love and times you once shared.",
+    img: treeImg,
+    alt: "Tree planting ritual setup",
   },
   {
     title: "Ceremony of the Rose",
     body:
-      "A vase is set up beside a framed photo on a separate table, and each person is given a rose to place in the vase as they bid farewell. Mourners may also place the roses on the coffin.",
+      "A vase is set up beside a framed photo on a separate table, and each person is given a rose to place in the vase as they bid farewell to their loved one, in silent remembering or in prayer. The mourners may also place the roses on the coffin itself.",
+    img: flowersImg,
+    alt: "Rose arrangement ready for ceremony",
   },
   {
     title: "Bird Release",
-    body:
-      "Releasing birds can be a very moving experience, as a visual representation that love is stronger than death. This ritual is placed at the end of the ceremony on most occasions.",
+    body: `Birds symbolise transition in many ways.
+
+Releasing birds during a funeral ceremony can be a very moving experience, as a visual representation that love is stronger than death.
+
+This ritual is placed at the end of the ceremony on most occasions and can really help to uplift those in attendance.`,
+    img: handfastingCelebrate,
+    alt: "Outdoor ceremony moment with greenery backdrop",
   },
 ];
 
@@ -49,16 +67,22 @@ export function CelebrationOfLifePage() {
       <Section title="Celebration of life">
         <p>We believe love transcends the boundaries of life and death, and that grief and joy can coexist.</p>
         <p className="mt-4">
-          Our ceremonies are thoughtfully crafted with deep love and affection as a well-deserved tribute, because every life has a story worth celebrating.
+          Our ceremonies are thoughtfully crafted with deep love and affection, as a well-deserved tribute in the celebration of your loved one's life, because every life has a story worth celebrating.
         </p>
         <p className="mt-4">
-          We endeavour to capture the essence and personality of your loved one and create a space to celebrate the qualities that made them unique. It offers family and friends the opportunity to gather, share stories, and honour a life well lived.
+          We endeavour to capture the essence and personality of your loved one and create a space to celebrate the qualities that have made your loved one unique. It offers family and friends the opportunity to gather, to share stories, reflecting joyous moments and honour the life that was well lived.
         </p>
         <p className="mt-4">
-          Whether in a funeral home or a private home, at a gravesite or in a crematorium, we ensure each ceremony is conducted with warmth, sensitivity, dignity, and respect.
+          Whether in a funeral home or a private home, at a gravesite or in a crematorium, we ensure each ceremony is conducted with warmth, sensitivity, dignity, and respect for your loved one.
         </p>
         <p className="mt-4">
           Rather than focusing on grief and sorrow, a celebration of life ceremony is crafted respectfully to celebrate the uniqueness of your departed loved one and the impact they have had on our lives.
+        </p>
+        <p className="mt-4">
+          Traditional funerals may focus more on mourning; a celebration of life ceremony allows us to give thanks for the time spent with the departed loved one.
+        </p>
+        <p className="mt-4">
+          We prioritise Celebration of Life enquiries so families receive support quickly. Please call +353 87 130 2029 for urgent requests.
         </p>
 
         <h2 className="text-xl font-semibold mt-10">The ceremony</h2>
@@ -66,10 +90,15 @@ export function CelebrationOfLifePage() {
           Celebration of life ceremonies often include symbolic gestures or rituals that help honour our departed and provide a sense of closure. These rituals could include:
         </p>
         <div className="mt-4 space-y-3">
-          {rituals.map(({ title, body }) => (
+          {rituals.map(({ title, body, img, alt }) => (
             <details key={title} className={cx("rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
               <summary className="font-semibold cursor-pointer">{title}</summary>
               <p className="mt-2 whitespace-pre-line">{body}</p>
+              {img && (
+                <div className="mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10 aspect-[4/3]">
+                  <img src={img} alt={alt ?? title} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              )}
             </details>
           ))}
         </div>
@@ -92,4 +121,3 @@ export function CelebrationOfLifePage() {
     </>
   );
 }
-

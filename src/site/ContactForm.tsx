@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Mail } from "lucide-react";
 import { useTheme } from "./theme";
 
@@ -6,9 +6,47 @@ function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
 }
 
+const STORAGE_KEY = "wcc-contact-draft";
+type Draft = Partial<{
+  name: string;
+  contact: string;
+  type: string;
+  date: string;
+  message: string;
+}>;
+
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
+  const [draft, setDraft] = useState<Draft>(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : {};
+    } catch {
+      return {};
+    }
+  });
   const { isDark } = useTheme();
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(draft));
+    } catch {
+      // ignore write failures
+    }
+  }, [draft]);
+
+  const updateDraft = (key: keyof Draft, value: string) => {
+    setDraft((prev: Draft) => ({ ...prev, [key]: value }));
+  };
+
+  const clearDraft = () => {
+    setDraft({});
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // ignore
+    }
+  };
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -26,7 +64,7 @@ export function ContactForm() {
         `mailto:westcoastcelebrants@gmail.com?subject=Enquiry from ${name}` +
         `&body=Contact: ${contact}%0AType: ${type}%0ADate: ${date}%0A%0A${message}`;
       setStatus("ok");
-      form.reset();
+      clearDraft();
     } catch {
       setStatus("error");
     }
@@ -40,9 +78,32 @@ export function ContactForm() {
   return (
     <form className="mt-4 grid gap-4" onSubmit={onSubmit} noValidate>
       <input type="text" name="company" className="hidden" tabIndex={-1} autoComplete="off" />
-      <input name="name" required className={inputBase} placeholder="Your name" aria-label="Your name" />
-      <input name="contact" required className={inputBase} placeholder="Email or phone" aria-label="Email or phone" />
-      <select name="type" required className={inputBase} defaultValue="" aria-label="Ceremony type">
+      <input
+        name="name"
+        required
+        className={inputBase}
+        placeholder="Your name"
+        aria-label="Your name"
+        value={draft.name ?? ""}
+        onChange={(e) => updateDraft("name", e.target.value)}
+      />
+      <input
+        name="contact"
+        required
+        className={inputBase}
+        placeholder="Email or phone"
+        aria-label="Email or phone"
+        value={draft.contact ?? ""}
+        onChange={(e) => updateDraft("contact", e.target.value)}
+      />
+      <select
+        name="type"
+        required
+        className={inputBase}
+        value={draft.type ?? ""}
+        onChange={(e) => updateDraft("type", e.target.value)}
+        aria-label="Ceremony type"
+      >
         <option value="" disabled>
           Ceremony type
         </option>
@@ -53,13 +114,22 @@ export function ContactForm() {
         <option>Vow Renewal</option>
         <option>Celebration of Life</option>
       </select>
-      <input name="date" type="date" className={inputBase} aria-label="Preferred date" />
+      <input
+        name="date"
+        type="date"
+        className={inputBase}
+        aria-label="Preferred date"
+        value={draft.date ?? ""}
+        onChange={(e) => updateDraft("date", e.target.value)}
+      />
       <textarea
         name="message"
         required
         className={cx(inputBase, "h-28")}
         placeholder="Tell us a little about your ceremony"
         aria-label="Message"
+        value={draft.message ?? ""}
+        onChange={(e) => updateDraft("message", e.target.value)}
       />
       <div className="flex flex-wrap items-center gap-3">
         <button

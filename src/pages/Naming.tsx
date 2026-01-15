@@ -2,6 +2,11 @@ import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/theme";
+import namingFlowers from "../assets/Giving of flowers.jpg";
+import namingCandle from "../assets/Unity Candle.jpg";
+import namingBook from "../assets/SigingBook.jpg";
+import namingSand from "../assets/Sand Blending.jpg";
+import namingTree from "../assets/Tree.jpg";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -12,21 +17,30 @@ const namingEnhancements = [
     title: "Rose Petal & Swaddling Blanket",
     body:
       "Two-part enhancement involving rose petals, a swaddling blanket, and water. Guests place rose petals in water with silent wishes at the beginning. Towards the end, parents sprinkle rose water on baby's hands and feet, accompanied by silent wishes.",
+    img: namingFlowers,
+    alt: "Rose petals placed in water for a naming ceremony",
   },
   {
     title: "Dedication Candle",
     body:
       "Symbolises passing love and wisdom from one generation to another. Family members light a family candle, and parents use it to light the child's candle. Option to relight a special candle annually for the naming anniversary.",
+    img: namingCandle,
+    alt: "Dedication candle glowing during ceremony",
   },
   {
     title: "Memory Book",
-    body:
-      "Guests write wishes and messages in a book for the baby. Some couples integrate Polaroid photos along with written blessings. A lasting memento for the child to read in the future.",
+    body: `Guests write wishes and messages in a book for the baby.
+
+Some couples integrate Polaroid photos along with written blessings. A lasting memento for the child to read in the future.`,
+    img: namingBook,
+    alt: "Signing book ready for guests' messages",
   },
   {
     title: "Sand Blending",
     body:
       "Participants use coloured sand to symbolise a loving union between family members. Each colour represents different characteristics and aspirations. Placed towards the end of the ceremony for its symbolic significance.",
+    img: namingSand,
+    alt: "Coloured sand blending ritual setup",
   },
   {
     title: "Hand & Footprint Ceremony",
@@ -35,13 +49,18 @@ const namingEnhancements = [
   },
   {
     title: "Memory Box",
-    body:
-      "A special box filled with reminders of early childhood. Can include scan photos, first items, lock of hair, and more. A cherished keepsake reflecting on the child's growth.",
+    body: `A special box filled with reminders of early childhood.
+
+Can include scan photos, first items, lock of hair, and more.
+
+A cherished keepsake reflecting on the child's growth.`,
   },
   {
     title: "Planting a Tree/Shrub",
     body:
       "Celebrate a new life by planting a small tree or shrub. Family members, especially older children or grandparents, can participate. The chosen plant can grow alongside the child over the years.",
+    img: namingTree,
+    alt: "Tree planting enhancement",
   },
   {
     title: "Bread & Salt Welcome",
@@ -73,7 +92,7 @@ export function NamingPage() {
       <Section title="Ceremony enhancements">
         <p>Naming ceremony enhancements may include any of the following:</p>
         <div className="mt-4 space-y-3">
-          {namingEnhancements.map(({ title, body }) => (
+          {namingEnhancements.map(({ title, body, img, alt }) => (
             <details
               key={title}
               className={cx(
@@ -83,6 +102,11 @@ export function NamingPage() {
             >
               <summary className="font-semibold cursor-pointer">{title}</summary>
               <p className="mt-2 whitespace-pre-line">{body}</p>
+              {img && (
+                <div className="mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10 aspect-[4/3]">
+                  <img src={img} alt={alt ?? title} className="w-full h-full object-cover" loading="lazy" />
+                </div>
+              )}
             </details>
           ))}
         </div>

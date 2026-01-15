@@ -1,4 +1,4 @@
-import { BookOpen, ChevronRight, Feather, Heart, Sparkles, Trees } from "lucide-react";
+import { Baby, BookOpen, ChevronRight, Feather, Heart, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
@@ -9,12 +9,42 @@ function cx(...parts: Array<string | false | null | undefined>) {
 }
 
 const services = [
-  { title: "Legal Weddings", icon: Heart, to: "/weddings" },
-  { title: "Commitment Weddings", icon: Sparkles, to: "/weddings" },
-  { title: "Elopement Weddings", icon: Feather, to: "/weddings" },
-  { title: "Naming Ceremonies", icon: Trees, to: "/naming" },
-  { title: "Vow Renewals", icon: Heart, to: "/vow-renewals" },
-  { title: "Celebration of Life", icon: BookOpen, to: "/celebration-of-life" },
+  {
+    title: "Legal Weddings",
+    icon: Heart,
+    to: "/weddings",
+    description: "Fully legal ceremonies with guidance on HSE notice and paperwork.",
+  },
+  {
+    title: "Commitment Weddings",
+    icon: Sparkles,
+    to: "/weddings",
+    description: "Celebrate your bond at home, even if you marry legally elsewhere.",
+  },
+  {
+    title: "Elopement Weddings",
+    icon: Feather,
+    to: "/weddings",
+    description: "Romantic, intimate vows for couples seeking adventure or privacy.",
+  },
+  {
+    title: "Naming Ceremonies",
+    icon: Baby,
+    to: "/naming",
+    description: "Welcome a child with promises, guide parents, and meaningful rituals.",
+  },
+  {
+    title: "Vow Renewals",
+    icon: Heart,
+    to: "/vow-renewals",
+    description: "Reaffirm your vows and story with family and friends gathered.",
+  },
+  {
+    title: "Celebration of Life",
+    icon: BookOpen,
+    to: "/celebration-of-life",
+    description: "Warm, dignified farewells that honour a life and comfort loved ones.",
+  },
 ];
 
 export function ServicesPage() {
@@ -34,7 +64,7 @@ export function ServicesPage() {
 
       <Section title="Services" kicker="What we offer">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map(({ title, icon: Icon, to }) => (
+          {services.map(({ title, icon: Icon, to, description }) => (
             <Link
               key={title}
               to={to}
@@ -50,7 +80,7 @@ export function ServicesPage() {
                 <ChevronRight className="h-4 w-4 opacity-70 translate-x-0 group-hover:translate-x-0.5 transition-transform" />
               </p>
               <p className={cx("mt-1 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
-                Personalised, story-led ceremonies with thoughtful enhancements.
+                {description}
               </p>
             </Link>
           ))}

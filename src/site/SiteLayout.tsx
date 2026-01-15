@@ -143,25 +143,31 @@ export function SiteLayout() {
               </NavLink>
               <div
                 className={cx(
-                  "absolute left-0 mt-3 w-56 rounded-2xl border p-2 shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto",
-                  isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+                  "absolute left-0 top-full pt-2 w-56 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto"
                 )}
               >
-                {serviceLinks.map((link) => (
-                  <NavLink
-                    key={link.to}
-                    to={link.to}
-                    className={({ isActive }) =>
-                      cx(
-                        "block rounded-xl px-3 py-2 text-sm transition-colors",
-                        isDark ? "hover:bg-slate-900" : "hover:bg-slate-50",
-                        isActive && "text-[var(--brand-teal)]"
-                      )
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
-                ))}
+                <div
+                  className={cx(
+                    "rounded-2xl border p-2 shadow-lg",
+                    isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+                  )}
+                >
+                  {serviceLinks.map((link) => (
+                    <NavLink
+                      key={link.to}
+                      to={link.to}
+                      className={({ isActive }) =>
+                        cx(
+                          "block rounded-xl px-3 py-2 text-sm transition-colors",
+                          isDark ? "hover:bg-slate-900" : "hover:bg-slate-50",
+                          isActive && "text-[var(--brand-teal)]"
+                        )
+                      }
+                    >
+                      {link.label}
+                    </NavLink>
+                  ))}
+                </div>
               </div>
             </div>
 
