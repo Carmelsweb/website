@@ -45,6 +45,12 @@ const services = [
     to: "/celebration-of-life",
     description: "Warm, dignified farewells that honour a life and comfort loved ones.",
   },
+  {
+    title: "Your funeral",
+    icon: BookOpen,
+    to: "/your-funeral",
+    description: "Plan ahead with a thoughtful ceremony that reflects your wishes.",
+  },
 ];
 
 export function ServicesPage() {
@@ -52,14 +58,14 @@ export function ServicesPage() {
 
   usePageMeta({
     title: "Services",
-    description: "Legal weddings, commitment ceremonies, elopements, naming ceremonies, vow renewals, and celebrations of life.",
+    description: "Legal weddings, commitment ceremonies, elopements, naming ceremonies, vow renewals, celebrations of life, and planning your own funeral.",
     path: "/services",
   });
 
   return (
     <>
       <Section title="Services">
-        <p>Choose from legal weddings, commitment ceremonies, vow renewals, naming ceremonies, and celebrations of life.</p>
+        <p>Choose from legal weddings, commitment ceremonies, vow renewals, naming ceremonies, celebrations of life, and planning your own funeral.</p>
       </Section>
 
       <Section title="Services" kicker="What we offer">
