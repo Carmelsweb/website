@@ -26,5 +26,19 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+  
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var redirect = params.get("redirect");
+        if (redirect) {
+          params.delete("redirect");
+          var newUrl = window.location.origin + redirect;
+          if (params.toString()) newUrl += (redirect.indexOf("?") === -1 ? "?" : "&") + params.toString();
+          window.history.replaceState(null, "", newUrl);
+        }
+      })();
+    </script>
+
   </body>
 </html>

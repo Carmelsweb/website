@@ -69,8 +69,8 @@ export function ContactForm() {
         >
           <Mail className="h-4 w-4" aria-hidden="true" /> {status === "sending" ? "Sending..." : "Send enquiry"}
         </button>
-        <p className={cx("text-xs", isDark ? "text-slate-300" : "text-slate-600")}>
-          Or email us at <a className="underline" href="mailto:westcoastcelebrants@gmail.com">westcoastcelebrants@gmail.com</a>
+        <p className={cx("text-xs break-words", isDark ? "text-slate-300" : "text-slate-600")}>
+          Or email us at <a className="underline break-all" href="mailto:westcoastcelebrants@gmail.com">westcoastcelebrants@gmail.com</a>
         </p>
       </div>
       {status === "ok" && <p className="text-sm text-emerald-600">Thanks! We'll get back to you soon.</p>}
