@@ -21,6 +21,9 @@ export function ContactPage() {
   return (
     <Section title="Check availability" kicker="Get in touch">
       <p>Based in Westport, Co. Mayo, officiating across the West of Ireland.</p>
+      <p className={cx("mt-2 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
+        We reply within 24 hours. For urgent Celebration of Life enquiries, please call.
+      </p>
       <div className="mt-8 grid sm:grid-cols-2 gap-6">
         <div className={cx("rounded-3xl border p-6 shadow-sm", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
           <h2 className="font-semibold text-lg">Quick enquiry</h2>
@@ -39,11 +42,40 @@ export function ContactPage() {
           </Link>
           <div className={cx("mt-6 text-sm space-y-2 break-words", isDark ? "text-slate-300" : "text-slate-600")}>
             <p className="inline-flex items-center gap-2">
-              <Phone className="h-4 w-4" aria-hidden="true" /> <a href="tel:+353871302029" className="underline underline-offset-2 break-all">Phone on request</a>
+              <Phone className="h-4 w-4" aria-hidden="true" /> <a href="tel:+353871302029" className="underline underline-offset-2 break-all">+353 87 130 2029</a>
             </p>
             <p className="inline-flex items-center gap-2">
               <Mail className="h-4 w-4" aria-hidden="true" /> <a className="underline underline-offset-2 break-all" href="mailto:westcoastcelebrants@gmail.com">westcoastcelebrants@gmail.com</a>
             </p>
+            <div className="flex flex-wrap gap-2 text-xs">
+              <span>Follow:</span>
+              <a
+                className="underline underline-offset-2"
+                href="https://www.facebook.com/profile.php?id=61584558844105"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook
+              </a>
+              <span>·</span>
+              <a
+                className="underline underline-offset-2"
+                href="https://www.facebook.com/share/r/18Fmc3ioNA/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook reel
+              </a>
+              <span>·</span>
+              <a
+                className="underline underline-offset-2"
+                href="https://www.instagram.com/westcoastcelebrants.carmel?utm_source=qr&igsh=OXJqb25idmw1eHpy"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Instagram
+              </a>
+            </div>
           </div>
         </div>
       </div>

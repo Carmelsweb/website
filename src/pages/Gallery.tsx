@@ -2,7 +2,7 @@
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/theme";
-import lovingCupPhoto from "../assets/Loving Cup.jpeg";
+import lovingCupPhoto from "../assets/LovingCupver2.jpeg";
 import ringsOnPillow from "../assets/Rings.jpeg";
 import galleryOne from "../assets/SunSetPicture.jpg";
 import galleryTwo from "../assets/Beach.jpg";
@@ -17,7 +17,8 @@ import galleryTen from "../assets/Hand Fasting.jpg";
 import galleryEleven from "../assets/Hand fasting close up.jpg";
 import galleryTwelve from "../assets/Pinning the colours.jpg";
 import galleryThirteen from "../assets/Name Plate.jpg";
-import galleryFifteen from "../assets/Tree.jpg";
+import galleryFifteen from "../assets/PlantingTree.jpeg";
+import wishingTreeImg from "../assets/Wishingtree.jpeg";
 import gallerySixteen from "../assets/Giving of flowers.jpg";
 import gallerySeventeen from "../assets/Gem Stones.jpg";
 import galleryEighteen from "../assets/ClockPic.jpg";
@@ -45,7 +46,7 @@ const galleryImages = [
   { src: handfastingSmile, alt: "Groom smiling while holding hands wrapped in colourful ribbons" },
   { src: handfastingCelebrate, alt: "Couple raise their hands wrapped in ribbons to celebrate the moment" },
   { src: ringsOnPillow, alt: "Wedding rings resting on a satin pillow with greenery" },
-  { src: lovingCupPhoto, alt: "Ceremonial loving cup with a daffodil on a blue wooden table" },
+  { src: lovingCupPhoto, alt: "Ceremonial loving cup" },
   { src: galleryOne, alt: "Sunset ceremony sky over the coast" },
   { src: galleryTwo, alt: "Beach ceremony walkway" },
   { src: galleryThree, alt: "Beach ceremony view to the water" },
@@ -59,6 +60,7 @@ const galleryImages = [
   { src: galleryEleven, alt: "Close-up of handfasting ribbons" },
   { src: galleryTwelve, alt: "Pinning the colours tradition" },
   { src: galleryThirteen, alt: "Personalised name plate for ceremony" },
+  { src: wishingTreeImg, alt: "Wishing tree with tags and notes" },
   { src: galleryFifteen, alt: "Tree planting enhancement" },
   { src: gallerySixteen, alt: "Giving of flowers enhancement" },
   { src: gallerySeventeen, alt: "Gem stones keepsake display" },

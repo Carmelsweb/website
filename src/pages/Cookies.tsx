@@ -16,7 +16,7 @@ export function CookiesPage() {
 
       <h2 className="text-xl font-semibold mt-10">Local storage</h2>
       <p className="mt-3">
-        We store your theme preference (light or dark) in your browser using local storage so the site remembers your choice.
+        We store your theme preference (light or dark) and any in-progress enquiry form details in your browser using local storage so the site remembers your choice and lets you finish a draft later. This data stays on your device and is cleared when you submit or manually remove it.
       </p>
 
       <h2 className="text-xl font-semibold mt-10">Third-party services</h2>

@@ -31,6 +31,9 @@ export function YourFuneralPage() {
         <p className="mt-4">
           This is a real gift to your loved ones during their time of sorrow; you have taken away that concern for them.
         </p>
+        <p className="mt-4">
+          We can document preferences, music, readings, and enhancement ideas, and discuss payment-in-advance options similar to funeral home pre-purchase plans. We also collaborate with local funeral homes and can provide a simple one-page flyer for families.
+        </p>
       </Section>
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
