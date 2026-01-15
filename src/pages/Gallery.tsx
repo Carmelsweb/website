@@ -2,6 +2,8 @@
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/theme";
+import lovingCupPhoto from "../assets/Loving Cup.jpeg";
+import ringsOnPillow from "../assets/Rings.jpeg";
 import galleryOne from "../assets/SunSetPicture.jpg";
 import galleryTwo from "../assets/Beach.jpg";
 import galleryThree from "../assets/Beach1.jpg";
@@ -20,12 +22,30 @@ import gallerySixteen from "../assets/Giving of flowers.jpg";
 import gallerySeventeen from "../assets/Gem Stones.jpg";
 import galleryEighteen from "../assets/ClockPic.jpg";
 import galleryNineteen from "../assets/SigingBook.jpg";
+import handfastingClose from "../assets/WhatsApp Image 2026-01-15 at 19.17.20.jpeg";
+import handfastingGuide from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (1).jpeg";
+import handfastingVows from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (2).jpeg";
+import handfastingRibbons from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (3).jpeg";
+import handfastingBackdrop from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (4).jpeg";
+import handfastingMoment from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (5).jpeg";
+import handfastingSmile from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (6).jpeg";
+import handfastingCelebrate from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (7).jpeg";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
 }
 
 const galleryImages = [
+  { src: handfastingClose, alt: "Handfasting ribbons being tied around the couple's joined hands" },
+  { src: handfastingGuide, alt: "Celebrant guides the couple through a colourful handfasting ritual" },
+  { src: handfastingVows, alt: "Bride and groom holding hands as vows are read with ribbons" },
+  { src: handfastingRibbons, alt: "Long orange, green, yellow, and black ribbons drape during handfasting" },
+  { src: handfastingBackdrop, alt: "Outdoor ceremony scene with celebrant reading beside the bride" },
+  { src: handfastingMoment, alt: "Couple sharing a laugh as the celebrant secures handfasting ribbons" },
+  { src: handfastingSmile, alt: "Groom smiling while holding hands wrapped in colourful ribbons" },
+  { src: handfastingCelebrate, alt: "Couple raise their hands wrapped in ribbons to celebrate the moment" },
+  { src: ringsOnPillow, alt: "Wedding rings resting on a satin pillow with greenery" },
+  { src: lovingCupPhoto, alt: "Ceremonial loving cup with a daffodil on a blue wooden table" },
   { src: galleryOne, alt: "Sunset ceremony sky over the coast" },
   { src: galleryTwo, alt: "Beach ceremony walkway" },
   { src: galleryThree, alt: "Beach ceremony view to the water" },

@@ -2,17 +2,21 @@ import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/theme";
-import sandBlending from "../assets/Web Site/Sand Blending.jpg";
 import unityCandleImg from "../assets/Unity Candle.jpg";
 import sandBlendingImg from "../assets/Sand Blending.jpg";
-import handFastingImg from "../assets/Hand Fasting.jpg";
-import handFastingCloseImg from "../assets/Hand fasting close up.jpg";
 import pinningColoursImg from "../assets/Pinning the colours.jpg";
 import treeImg from "../assets/Tree.jpg";
-import namePlateImg from "../assets/Name Plate.jpg";
-import timeCapsuleImg from "../assets/Time Capsule.jpg";
 import givingFlowersImg from "../assets/Giving of flowers.jpg";
 import gemStonesImg from "../assets/Gem Stones.jpg";
+import ringsOnPillow from "../assets/Rings.jpeg";
+import lovingCupPhoto from "../assets/Loving Cup.jpeg";
+import handfastingClose from "../assets/WhatsApp Image 2026-01-15 at 19.17.20.jpeg";
+import handfastingGuide from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (1).jpeg";
+import handfastingVows from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (2).jpeg";
+import handfastingRibbons from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (3).jpeg";
+import handfastingMoment from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (5).jpeg";
+import handfastingSmile from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (6).jpeg";
+import handfastingCelebrate from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (7).jpeg";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -29,19 +33,19 @@ const enhancements = [
     title: "Ring Warming",
     body:
       "Guests pass the rings from person to person, holding them for a moment to silently offer a wish or blessing. The rings arrive warmed by the hands and good wishes of your closest people.",
-    img: givingFlowersImg,
+    img: ringsOnPillow,
   },
   {
     title: "Handfasting",
     body:
       "An ancient Celtic tradition where the couple's hands are bound with ribbons to symbolise the binding of their lives. You can choose colours that represent your story, values, or family heritage.",
-    img: handFastingImg,
+    img: handfastingClose,
   },
   {
     title: "The Quaich (Loving Cup)",
     body:
       "A shared cup symbolising trust and unity. Often engraved with names and date, the couple takes a sip to signify sharing all that life brings.",
-    img: gemStonesImg,
+    img: lovingCupPhoto,
   },
   {
     title: "Oathing Stone",
@@ -59,13 +63,12 @@ const enhancements = [
     title: "The Loving Cup",
     body:
       "This ancient ritual can use a quaich, an engraved glass, or a special cup chosen by the couple to represent unity and shared life.",
-    img: namePlateImg,
+    img: lovingCupPhoto,
   },
   {
     title: "Jumping the Broom",
     body:
       "A symbolic leap into married life. The broom can be traditional or custom made with materials meaningful to the couple or their families.",
-    img: handFastingCloseImg,
   },
   {
     title: "The Rose Ceremony",
@@ -77,7 +80,7 @@ const enhancements = [
     title: "Wishing Tree",
     body:
       "Guests write wishes on tags and hang them on a tree, creating a lasting keepsake of the day.",
-    img: timeCapsuleImg,
+    img: treeImg,
   },
   {
     title: "Planting a Tree",
@@ -94,16 +97,18 @@ const enhancements = [
 ];
 
 const enhancementPhotos = [
+  { src: handfastingGuide, alt: "Handfasting with celebrant guiding colourful ribbons" },
+  { src: handfastingMoment, alt: "Couple share a laugh as ribbons are tied" },
+  { src: handfastingSmile, alt: "Groom smiling while hands are wrapped with ribbons" },
+  { src: handfastingCelebrate, alt: "Couple lift their ribbon-wrapped hands to celebrate" },
+  { src: handfastingRibbons, alt: "Handfasting ribbons draping to the ground" },
+  { src: ringsOnPillow, alt: "Wedding rings on a satin pillow ready for ring warming" },
+  { src: lovingCupPhoto, alt: "Ceremonial loving cup with a daffodil" },
   { src: unityCandleImg, alt: "Unity candle during a ceremony" },
-  { src: sandBlendingImg, alt: "Sand blending display" },
-  { src: handFastingImg, alt: "Handfasting ribbons tied" },
-  { src: handFastingCloseImg, alt: "Close-up of handfasting ribbons" },
-  { src: pinningColoursImg, alt: "Pinning the colours tradition" },
-  { src: treeImg, alt: "Tree planting enhancement setup" },
-  { src: namePlateImg, alt: "Personalised name plate keepsake" },
-  { src: timeCapsuleImg, alt: "Time capsule ritual elements" },
+  { src: sandBlendingImg, alt: "Coloured sand blending ritual display" },
+  { src: treeImg, alt: "Tree planting ceremony setup" },
+  { src: pinningColoursImg, alt: "Pinning the tartan ribbon detail" },
   { src: givingFlowersImg, alt: "Giving of flowers enhancement" },
-  { src: gemStonesImg, alt: "Gem stones used in ceremony" },
 ];
 
 export function WeddingsPage() {
@@ -138,13 +143,13 @@ export function WeddingsPage() {
             )}
           >
             <img
-              src={sandBlending}
-              alt="Sand blending ritual during a wedding ceremony"
+              src={handfastingVows}
+              alt="Outdoor handfasting during a wedding ceremony"
               className="w-full h-full object-cover"
               loading="lazy"
             />
             <figcaption className={cx("px-4 py-3 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
-              Sand blending enhancement
+              Handfasting ceremony outdoors
             </figcaption>
           </figure>
           <div className={cx("space-y-3 text-base leading-7", isDark ? "text-slate-300" : "text-slate-700")}>
