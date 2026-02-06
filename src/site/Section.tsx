@@ -1,4 +1,4 @@
-import { useTheme } from "./useTheme";
+﻿import { useTheme } from "./useTheme";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -19,7 +19,7 @@ export function Section({
   return (
     <section
       id={id}
-      className="scroll-mt-24 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 outline-none"
+      className="scroll-mt-24 max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 py-16 outline-none"
       tabIndex={-1}
     >
       {kicker && (

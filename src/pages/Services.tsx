@@ -1,4 +1,4 @@
-import { Baby, BookOpen, ChevronRight, Feather, Heart, Sparkles } from "lucide-react";
+﻿import { Baby, BookOpen, ChevronRight, Feather, Heart, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
@@ -93,7 +93,7 @@ export function ServicesPage() {
         </div>
       </Section>
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 pb-16">
         <div
           className={cx(
             "rounded-3xl border p-6 sm:p-8",

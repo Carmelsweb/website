@@ -114,7 +114,7 @@ export function SiteLayout() {
           !isDark && "border-slate-200/70"
         )}
       >
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 xl:px-10 h-16">
           <Link to="/" className="flex items-center gap-3 group" aria-label="West Coast Celebrants home">
             <img
               src="/logo.png"
@@ -218,8 +218,8 @@ export function SiteLayout() {
               exit={{ height: 0, opacity: 0 }}
               className={cx("lg:hidden border-t", isDark ? "border-slate-800 bg-slate-950/95" : "border-slate-200 bg-white/95")}
             >
-              <div className="px-4 py-4 max-w-6xl mx-auto space-y-4">
-                <div className="grid grid-cols-2 gap-3">
+              <div className="px-4 py-4 max-w-7xl mx-auto space-y-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {primaryLinks.map((link) => (
                     <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
                       {link.label}
@@ -230,7 +230,7 @@ export function SiteLayout() {
                   <p className={cx("text-sm uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
                     Services
                   </p>
-                  <div className="mt-2 grid grid-cols-2 gap-3">
+                  <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {serviceLinks.map((link) => (
                       <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
                         {link.label}
@@ -242,7 +242,7 @@ export function SiteLayout() {
                   <p className={cx("text-sm uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
                     Legal
                   </p>
-                  <div className="mt-2 grid grid-cols-2 gap-3">
+                  <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {legalLinks.map((link) => (
                       <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
                         {link.label}
@@ -252,7 +252,7 @@ export function SiteLayout() {
                 </div>
                 <Link
                   to="/contact"
-                  className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-2xl font-semibold text-white shadow-lg shadow-[var(--brand-teal)]/20 bg-gradient-to-r from-[var(--brand-teal)] to-emerald-600"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-4 py-3 rounded-2xl font-semibold text-white shadow-lg shadow-[var(--brand-teal)]/20 bg-gradient-to-r from-[var(--brand-teal)] to-emerald-600"
                 >
                   <Calendar className="h-4 w-4" aria-hidden="true" /> Inquire now
                 </Link>
@@ -274,7 +274,7 @@ export function SiteLayout() {
             : "border-slate-200 bg-gradient-to-b from-[#e9f4ff] via-white to-[#f4f8ff]"
         )}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid sm:grid-cols-2 gap-6 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 py-10 grid sm:grid-cols-2 gap-6 items-center">
           <div>
             <p className="font-semibold">West Coast Celebrants</p>
             <p className={cx("text-base", isDark ? "text-slate-300" : "text-slate-600")}>
@@ -288,7 +288,7 @@ export function SiteLayout() {
               ))}
             </div>
           </div>
-          <div className="justify-self-end text-base">
+          <div className="justify-self-start sm:justify-self-end text-base">
             <ThemeToggle />
           </div>
         </div>
