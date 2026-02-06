@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/useTheme";
@@ -30,12 +30,12 @@ export function HowItWorksPage() {
             <strong>Book your date:</strong> If you would like to proceed, we will send a booking form to capture the details for crafting your unique ceremony. A booking fee is due at this point to secure the date.
           </li>
           <li>
-            <strong>Co-create:</strong> We share readings, poems, and enhancement ideas. We work closely with you to express your values, culture, and traditions. Up to <strong>three revisions</strong> and <strong>one rehearsal</strong> (if requested) are included. Fees are due in full <strong>four weeks</strong> before the ceremony. Celebration of Life ceremonies are typically scheduled and drafted faster to meet families’ needs.
+            <strong>Co-create:</strong> We share readings, poems, and enhancement ideas. We work closely with you to express your values, culture, and traditions. Up to <strong>three revisions</strong> and <strong>one rehearsal</strong> (if requested) are included. Fees are due in full <strong>four weeks</strong> before the ceremony. Celebration of Life ceremonies are typically scheduled and drafted faster to meet familiesâ€™ needs.
           </li>
         </ol>
       </Section>
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 pb-16">
         <div className={cx("rounded-3xl border p-6 sm:p-8", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
           <h2 className="text-2xl font-semibold">Start your enquiry</h2>
           <p className={cx("mt-2", isDark ? "text-slate-300" : "text-slate-600")}>

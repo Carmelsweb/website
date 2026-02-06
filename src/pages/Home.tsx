@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Calendar, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../site/useTheme";
@@ -44,7 +44,7 @@ export function HomePage() {
           </svg>
         </div>
 
-        <div className={cx("max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32", isDark ? "text-white" : "text-slate-900")}>
+        <div className={cx("max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 py-24 sm:py-32", isDark ? "text-white" : "text-slate-900")}>
           <motion.h1
             initial={prefersReduced ? false : { opacity: 0, y: 10 }}
             animate={prefersReduced ? {} : { opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 py-12">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { title: "Weddings", copy: "Legal, commitment, and elopement ceremonies.", to: "/weddings" },

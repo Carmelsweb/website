@@ -1,4 +1,4 @@
-import { useTheme } from "./useTheme";
+﻿import { useTheme } from "./useTheme";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -10,7 +10,7 @@ export function RouteFallback() {
 
   return (
     <div className={cx("w-full", isDark ? "text-slate-200" : "text-slate-700")}>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 py-10">
         <div
           className={cx(
             "rounded-2xl border p-6",
