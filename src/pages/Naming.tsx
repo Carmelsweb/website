@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
-import { useTheme } from "../site/theme";
+import { useTheme } from "../site/useTheme";
 import namingFlowers from "../assets/Giving of flowers.jpg";
 import namingCandle from "../assets/Unity Candle.jpg";
 import namingBook from "../assets/SigingBook.jpg";
@@ -49,7 +49,7 @@ Some couples integrate Polaroid photos along with written blessings. A lasting m
   },
   {
     title: "Memory Box",
-    body: `A special box filled with reminders of early childhood.
+    body: `A special box filled with heirlooms.
 
 Can include scan photos, first items, lock of hair, and more.
 
@@ -66,12 +66,7 @@ A cherished keepsake reflecting on the child's growth.`,
     title: "Bread & Salt Welcome",
     body:
       "A traditional Balkan ritual symbolising hospitality. Best placed at the start of the ceremony as part of the opening welcome. Parents or guide parents offer baskets of bread and salt to each guest.",
-  },
-  {
-    title: "Grandma's Cake",
-    body:
-      "Incorporate a loved one's recipe for a naming cake. Discuss the significance of passing down love through family traditions. Best placed after closing words and before the celebratory moment.",
-  },
+  }
 ];
 
 export function NamingPage() {

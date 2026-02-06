@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Calendar, ChevronDown, Menu, X } from "lucide-react";
-import { useTheme } from "./theme";
+import { useTheme } from "./useTheme";
 import paintedBackground from "../assets/bbf6a4b0-0ef3-409f-8025-2ad9df65a8d3.png";
 
 const palette = { navy: "#1c2233", teal: "#5c8a87", gold: "#d4a62a" };
@@ -278,7 +278,7 @@ export function SiteLayout() {
           <div>
             <p className="font-semibold">West Coast Celebrants</p>
             <p className={cx("text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
-              Westport, Co. Mayo · Officiating across the West of Ireland
+              Westport, Co. Mayo Â· Officiating across the West of Ireland
             </p>
             <div className="mt-3 flex flex-wrap gap-3 text-sm">
               {legalLinks.map((link) => (

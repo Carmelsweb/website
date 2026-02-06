@@ -1,7 +1,7 @@
-﻿import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
-import { useTheme } from "../site/theme";
+import { useTheme } from "../site/useTheme";
 import ringsOnPillow from "../assets/Rings.jpeg";
 import candleImg from "../assets/Unity Candle.jpg";
 import treeImg from "../assets/Tree.jpg";

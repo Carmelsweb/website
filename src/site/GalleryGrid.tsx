@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { useTheme } from "./theme";
+import { useCallback, useEffect, useState } from "react";
+import { useTheme } from "./useTheme";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -8,22 +8,22 @@ function cx(...parts: Array<string | false | null | undefined>) {
 export function GalleryGrid({
   images,
 }: {
-  images: { src: string; alt: string; w?: number; h?: number }[];
+  images: { src: string; thumbSrc?: string; alt: string; w?: number; h?: number }[];
 }) {
   const { isDark } = useTheme();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const close = () => setActiveIndex(null);
-  const showPrev = () => {
+  const close = useCallback(() => setActiveIndex(null), []);
+  const showPrev = useCallback(() => {
     setActiveIndex((current) =>
       current === null ? current : (current - 1 + images.length) % images.length
     );
-  };
-  const showNext = () => {
+  }, [images.length]);
+  const showNext = useCallback(() => {
     setActiveIndex((current) =>
       current === null ? current : (current + 1) % images.length
     );
-  };
+  }, [images.length]);
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -34,7 +34,7 @@ export function GalleryGrid({
     };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
-  }, [activeIndex]);
+  }, [activeIndex, close, showNext, showPrev]);
 
   return (
     <>
@@ -50,9 +50,10 @@ export function GalleryGrid({
             )}
           >
             <img
-              src={img.src}
+              src={img.thumbSrc ?? img.src}
               alt={img.alt}
               loading="lazy"
+              decoding="async"
               width={img.w ?? 640}
               height={img.h ?? 480}
               className="w-full h-full object-cover aspect-[4/3]"
@@ -83,7 +84,7 @@ export function GalleryGrid({
               className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 rounded-full bg-black/50 text-white px-3 py-3 shadow-lg hover:bg-black/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
               aria-label="Previous image"
             >
-              ‹
+              {"<"}
             </button>
 
             <figure className="mx-auto max-w-6xl w-full flex flex-col items-center gap-3 px-4 sm:px-8 py-6 sm:py-10 overflow-auto">
@@ -92,6 +93,7 @@ export function GalleryGrid({
                 alt={images[activeIndex].alt}
                 className="max-h-[82vh] w-auto max-w-full rounded-2xl shadow-2xl border border-white/15"
                 loading="eager"
+                decoding="async"
               />
               <figcaption className="text-sm text-white/80 text-center px-6">
                 {images[activeIndex].alt}
@@ -104,7 +106,7 @@ export function GalleryGrid({
               className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 rounded-full bg-black/50 text-white px-3 py-3 shadow-lg hover:bg-black/70 focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
               aria-label="Next image"
             >
-              ›
+              {">"}
             </button>
           </div>
         </div>

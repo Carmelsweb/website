@@ -498,8 +498,8 @@ const weddingPhotos = [
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               { title: "Legal Weddings", icon: Heart, description: "Fully legal ceremonies with guidance on notice and paperwork." },
-              { title: "Commitment Weddings", icon: Sparkles, description: "Celebrate your bond at home, even if you marry elsewhere." },
-              { title: "Elopement Weddings", icon: Feather, description: "Romantic, intimate vows for couples seeking adventure or privacy." },
+              { title: "Commitment Weddings", icon: Sparkles, description: "Celebrate your love and commitment without the legal paperwork." },
+              { title: "Elopement Weddings", icon: Feather, description: "Feels right just for you." },
               { title: "Naming Ceremonies", icon: Trees, description: "Welcome a child with promises, readings, and keepsakes." },
               { title: "Vow Renewals", icon: Heart, description: "Reaffirm your vows with family and friends gathered." },
               { title: "Celebration of Life", icon: BookOpen, description: "Warm, dignified farewells that honour a life and comfort loved ones." },
@@ -624,13 +624,9 @@ const weddingPhotos = [
           </ul>
 
           <div className="mt-6 space-y-4">
-            <p><em>The difference between these events is that Commitment Weddings are not legally binding.</em></p>
-            <p>
-              Perhaps, if for various reasons, it is not practical for a couple to have a Legal wedding, then a Commitment wedding is the perfect way to publicly declare your commitment to each other and celebrate your unique love.
-            </p>
-            <p>
-              Elopement Weddings can be Legal or Commitment, usually more intimate with fewer people in attendance.
-            </p>
+            <p><em>The difference between these events is that Commitment Weddings are not legally binding; a <strong>Legal Wedding</strong> is.</em></p>
+            <p><strong>Commitment Weddings</strong>: Celebrate your love and commitment without the legal paperwork.</p>
+            <p><strong>Elopement Weddings</strong>: Feels right just for you.</p>
             <p>
               Your style will flow through so that every word, ritual and moments feel uniquely yours. This is your day, we will do it your way.
             </p>
@@ -855,7 +851,7 @@ Some couples integrate Polaroid photos along with written blessings. A lasting m
               },
               {
                 title: "Memory Box",
-                body: `A special box filled with reminders of early childhood.
+                body: `A special box filled with heirlooms.
 
 Can include scan photos, first items, lock of hair, and more.
 
@@ -870,10 +866,6 @@ A cherished keepsake reflecting on the child's growth.`,
               {
                 title: "Bread & Salt Welcome",
                 body: `A traditional Balkan ritual symbolising hospitality. Best placed at the start of the ceremony as part of the opening welcome. Parents or guide parents offer baskets of bread and salt to each guest.`,
-              },
-              {
-                title: "Grandma’s Cake",
-                body: `Incorporate a loved one's recipe for a naming cake. Discuss the significance of passing down love through family traditions. Best placed after closing words and before the celebratory moment.`,
               },
             ].map(({ title, body, img, alt }) => (
               <details key={title} className={cx("rounded-xl border p-4", isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white")}>
