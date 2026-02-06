@@ -1,4 +1,4 @@
-﻿import { Section } from "../site/Section";
+import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/useTheme";
 

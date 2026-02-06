@@ -1,4 +1,4 @@
-﻿import { Baby, BookOpen, ChevronRight, Feather, Heart, Sparkles } from "lucide-react";
+import { Baby, BookOpen, ChevronRight, Feather, Heart, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";

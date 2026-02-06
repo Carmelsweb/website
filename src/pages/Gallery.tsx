@@ -1,4 +1,4 @@
-﻿import { GalleryGrid } from "../site/GalleryGrid";
+import { GalleryGrid } from "../site/GalleryGrid";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/useTheme";

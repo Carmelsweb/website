@@ -1,4 +1,4 @@
-﻿import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useTheme } from "./useTheme";
 
 function cx(...parts: Array<string | false | null | undefined>) {

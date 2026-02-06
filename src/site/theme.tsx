@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ThemeContext, type Theme } from "./theme-context";
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
