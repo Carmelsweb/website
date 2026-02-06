@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+﻿import React, { useEffect, useMemo, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Calendar, ChevronDown, Menu, X } from "lucide-react";
@@ -132,7 +132,7 @@ export function SiteLayout() {
                 to="/services"
                 className={({ isActive }) =>
                   cx(
-                    "text-sm font-medium transition-colors inline-flex items-center gap-1",
+                    "text-base font-medium transition-colors inline-flex items-center gap-1",
                     navBase,
                     isActive && "text-[var(--brand-teal)]"
                   )
@@ -158,7 +158,7 @@ export function SiteLayout() {
                       to={link.to}
                       className={({ isActive }) =>
                         cx(
-                          "block rounded-xl px-3 py-2 text-sm transition-colors",
+                          "block rounded-xl px-3 py-2 text-base transition-colors",
                           isDark ? "hover:bg-slate-900" : "hover:bg-slate-50",
                           isActive && "text-[var(--brand-teal)]"
                         )
@@ -176,7 +176,7 @@ export function SiteLayout() {
                 key={link.to}
                 to={link.to}
                 className={({ isActive }) =>
-                  cx("text-sm font-medium transition-colors", navBase, isActive && "text-[var(--brand-teal)]")
+                  cx("text-base font-medium transition-colors", navBase, isActive && "text-[var(--brand-teal)]")
                 }
               >
                 {link.label}
@@ -188,7 +188,7 @@ export function SiteLayout() {
             <Link
               to="/contact"
               className={cx(
-                "inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-sm font-semibold",
+                "inline-flex items-center gap-2 rounded-xl border px-4 py-2 text-base font-semibold",
                 isDark ? "border-slate-700 hover:bg-slate-900" : "border-slate-300 hover:bg-slate-50"
               )}
             >
@@ -221,30 +221,30 @@ export function SiteLayout() {
               <div className="px-4 py-4 max-w-6xl mx-auto space-y-4">
                 <div className="grid grid-cols-2 gap-3">
                   {primaryLinks.map((link) => (
-                    <NavLink key={link.to} to={link.to} className={cx("text-sm font-medium", navBase)}>
+                    <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
                       {link.label}
                     </NavLink>
                   ))}
                 </div>
                 <div>
-                  <p className={cx("text-xs uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
+                  <p className={cx("text-sm uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
                     Services
                   </p>
                   <div className="mt-2 grid grid-cols-2 gap-3">
                     {serviceLinks.map((link) => (
-                      <NavLink key={link.to} to={link.to} className={cx("text-sm font-medium", navBase)}>
+                      <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
                         {link.label}
                       </NavLink>
                     ))}
                   </div>
                 </div>
                 <div>
-                  <p className={cx("text-xs uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
+                  <p className={cx("text-sm uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
                     Legal
                   </p>
                   <div className="mt-2 grid grid-cols-2 gap-3">
                     {legalLinks.map((link) => (
-                      <NavLink key={link.to} to={link.to} className={cx("text-sm font-medium", navBase)}>
+                      <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
                         {link.label}
                       </NavLink>
                     ))}
@@ -277,10 +277,10 @@ export function SiteLayout() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid sm:grid-cols-2 gap-6 items-center">
           <div>
             <p className="font-semibold">West Coast Celebrants</p>
-            <p className={cx("text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
-              Westport, Co. Mayo Â· Officiating across the West of Ireland
+            <p className={cx("text-base", isDark ? "text-slate-300" : "text-slate-600")}>
+              Westport, Co. Mayo - Officiating across the West of Ireland
             </p>
-            <div className="mt-3 flex flex-wrap gap-3 text-sm">
+            <div className="mt-3 flex flex-wrap gap-3 text-base">
               {legalLinks.map((link) => (
                 <Link key={link.to} to={link.to} className={cx("underline underline-offset-2", navBase)}>
                   {link.label}
@@ -288,7 +288,7 @@ export function SiteLayout() {
               ))}
             </div>
           </div>
-          <div className="justify-self-end text-sm">
+          <div className="justify-self-end text-base">
             <ThemeToggle />
           </div>
         </div>
@@ -303,7 +303,7 @@ function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className={cx(
-        "inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm font-semibold",
+        "inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-base font-semibold",
         isDark ? "border-slate-700 hover:bg-slate-900" : "border-slate-300 hover:bg-slate-50"
       )}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}

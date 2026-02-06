@@ -4,6 +4,7 @@ type PageMeta = {
   title: string;
   description: string;
   path: string;
+  robots?: string;
 };
 
 const SITE_NAME = "West Coast Celebrants";
@@ -34,7 +35,7 @@ function setLinkTag(rel: string, href: string) {
   tag.href = href;
 }
 
-export function usePageMeta({ title, description, path }: PageMeta) {
+export function usePageMeta({ title, description, path, robots }: PageMeta) {
   useEffect(() => {
     const fullTitle = `${title} | ${SITE_NAME}`;
     document.title = fullTitle;
@@ -43,6 +44,7 @@ export function usePageMeta({ title, description, path }: PageMeta) {
     setLinkTag("canonical", canonical);
 
     setMetaTag("name", "description", description);
+    setMetaTag("name", "robots", robots ?? "index,follow,max-image-preview:large");
     setMetaTag("property", "og:site_name", SITE_NAME);
     setMetaTag("property", "og:title", fullTitle);
     setMetaTag("property", "og:description", description);
@@ -54,5 +56,5 @@ export function usePageMeta({ title, description, path }: PageMeta) {
     setMetaTag("name", "twitter:title", fullTitle);
     setMetaTag("name", "twitter:description", description);
     setMetaTag("name", "twitter:image", `${BASE_URL}${DEFAULT_OG_IMAGE}`);
-  }, [title, description, path]);
+  }, [title, description, path, robots]);
 }

@@ -23,7 +23,7 @@ export function Section({
       tabIndex={-1}
     >
       {kicker && (
-        <p className={cx("mb-3 text-xs uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
+        <p className={cx("mb-3 text-sm uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
           {kicker}
         </p>
       )}
@@ -41,4 +41,3 @@ export function Section({
     </section>
   );
 }
-

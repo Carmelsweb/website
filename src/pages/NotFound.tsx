@@ -7,6 +7,7 @@ export function NotFoundPage() {
     title: "Page not found",
     description: "The page you are looking for could not be found.",
     path: "/404",
+    robots: "noindex,follow",
   });
 
   return (

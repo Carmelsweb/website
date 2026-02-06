@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /*?redirect=*
 Sitemap: https://www.westcoastcelebrants.ie/sitemap.xml
