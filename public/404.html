@@ -8,12 +8,17 @@
   </head>
   <body>
     <script>
-      // GitHub Pages SPA fallback: redirect any unknown path back to index.html
-      // while preserving the original path + query + hash for the client router.
+      // GitHub Pages SPA fallback: keep the original path in sessionStorage
+      // and redirect to "/" so we avoid creating crawlable ?redirect= URLs.
       (function () {
         var loc = window.location;
-        var redirect = loc.origin + "/?redirect=" + encodeURIComponent(loc.pathname + loc.search + loc.hash);
-        loc.replace(redirect);
+        var originalPath = loc.pathname + loc.search + loc.hash;
+        try {
+          window.sessionStorage.setItem("spa-redirect-path", originalPath);
+        } catch (e) {
+          // ignore storage issues and still recover to root
+        }
+        loc.replace(loc.origin + "/");
       })();
     </script>
   </body>

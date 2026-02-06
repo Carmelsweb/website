@@ -87,7 +87,7 @@ export function GalleryGrid({
               {"<"}
             </button>
 
-            <figure className="mx-auto max-w-7xl w-full flex flex-col items-center gap-3 px-4 sm:px-8 py-6 sm:py-10 overflow-auto">
+            <figure className="mx-auto max-w-[82rem] w-full flex flex-col items-center gap-3 px-4 sm:px-8 py-6 sm:py-10 overflow-auto">
               <img
                 src={images[activeIndex].src}
                 alt={images[activeIndex].alt}

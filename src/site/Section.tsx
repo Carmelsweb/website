@@ -19,7 +19,7 @@ export function Section({
   return (
     <section
       id={id}
-      className="scroll-mt-24 max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 py-16 outline-none"
+      className="scroll-mt-24 max-w-[82rem] mx-auto px-4 sm:px-6 lg:px-10 py-16 outline-none"
       tabIndex={-1}
     >
       {kicker && (
@@ -41,3 +41,4 @@ export function Section({
     </section>
   );
 }
+

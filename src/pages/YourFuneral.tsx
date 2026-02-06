@@ -36,7 +36,7 @@ export function YourFuneralPage() {
         </p>
       </Section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 pb-16">
+      <section className="max-w-[82rem] mx-auto px-4 sm:px-6 lg:px-10 pb-16">
         <div
           className={cx(
             "rounded-3xl border p-6 sm:p-8",
@@ -58,3 +58,4 @@ export function YourFuneralPage() {
     </>
   );
 }
+

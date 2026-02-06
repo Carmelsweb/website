@@ -35,7 +35,7 @@ export function RecommendationsPage() {
         </p>
       </Section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 pb-16">
+      <section className="max-w-[82rem] mx-auto px-4 sm:px-6 lg:px-10 pb-16">
         <div className="grid gap-4 sm:grid-cols-2">
           {recommendations.map((item) => (
             <div
@@ -73,3 +73,4 @@ export function RecommendationsPage() {
     </>
   );
 }
+
