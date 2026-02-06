@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Facebook, Film, Instagram, Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContactForm } from "../site/ContactForm";
 import { Section } from "../site/Section";
@@ -47,34 +47,49 @@ export function ContactPage() {
             <p className="inline-flex items-center gap-2">
               <Mail className="h-4 w-4" aria-hidden="true" /> <a className="underline underline-offset-2 break-all" href="mailto:westcoastcelebrants@gmail.com">westcoastcelebrants@gmail.com</a>
             </p>
-            <div className="flex flex-wrap gap-2 text-xs">
-              <span>Follow:</span>
-              <a
-                className="underline underline-offset-2"
-                href="https://www.facebook.com/profile.php?id=61584558844105"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Facebook
-              </a>
-              <span>Â·</span>
-              <a
-                className="underline underline-offset-2"
-                href="https://www.facebook.com/share/r/18Fmc3ioNA/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Facebook reel
-              </a>
-              <span>Â·</span>
-              <a
-                className="underline underline-offset-2"
-                href="https://www.instagram.com/westcoastcelebrants.carmel?utm_source=qr&igsh=OXJqb25idmw1eHpy"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Instagram
-              </a>
+            <div className="mt-3">
+              <p className={cx("text-xs font-medium", isDark ? "text-slate-300" : "text-slate-600")}>Follow:</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                <a
+                  className={cx(
+                    "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
+                    isDark ? "border-slate-700 hover:bg-slate-900" : "border-slate-300 hover:bg-slate-50"
+                  )}
+                  href="https://www.facebook.com/profile.php?id=61584558844105"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="West Coast Celebrants on Facebook"
+                >
+                  <Facebook className="h-3.5 w-3.5" aria-hidden="true" />
+                  Facebook
+                </a>
+                <a
+                  className={cx(
+                    "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
+                    isDark ? "border-slate-700 hover:bg-slate-900" : "border-slate-300 hover:bg-slate-50"
+                  )}
+                  href="https://www.facebook.com/share/r/18Fmc3ioNA/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="West Coast Celebrants Facebook reel"
+                >
+                  <Film className="h-3.5 w-3.5" aria-hidden="true" />
+                  Reel
+                </a>
+                <a
+                  className={cx(
+                    "inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors",
+                    isDark ? "border-slate-700 hover:bg-slate-900" : "border-slate-300 hover:bg-slate-50"
+                  )}
+                  href="https://www.instagram.com/westcoastcelebrants.carmel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="West Coast Celebrants on Instagram"
+                >
+                  <Instagram className="h-3.5 w-3.5" aria-hidden="true" />
+                  Instagram
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -82,3 +97,4 @@ export function ContactPage() {
     </Section>
   );
 }
+
