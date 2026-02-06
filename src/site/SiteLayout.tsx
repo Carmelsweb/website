@@ -58,7 +58,8 @@ export function SiteLayout() {
         backgroundRepeat: "no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat",
         backgroundSize: "100% 100%, 560px, 620px, 720px, 1400px, cover",
         backgroundPosition: "center top, 12% 8%, 88% 10%, 50% 80%, 50% 10%, center",
-        backgroundBlendMode: "normal, screen, screen, screen, screen, soft-light",
+        backgroundAttachment: "fixed, fixed, fixed, fixed, fixed, fixed",
+        backgroundBlendMode: "normal, screen, screen, screen, screen, normal",
       } as React.CSSProperties),
     [isDark]
   );
