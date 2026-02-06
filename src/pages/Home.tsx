@@ -1,8 +1,6 @@
-﻿import { motion } from "framer-motion";
 import { Calendar, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../site/useTheme";
-import { usePrefersReducedMotion } from "../site/usePrefersReducedMotion";
 import { usePageMeta } from "../site/usePageMeta";
 
 function cx(...parts: Array<string | false | null | undefined>) {
@@ -11,7 +9,6 @@ function cx(...parts: Array<string | false | null | undefined>) {
 
 export function HomePage() {
   const { isDark } = useTheme();
-  const prefersReduced = usePrefersReducedMotion();
 
   usePageMeta({
     title: "Ceremonies crafted with heart",
@@ -44,32 +41,17 @@ export function HomePage() {
           </svg>
         </div>
 
-        <div className={cx("max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 py-24 sm:py-32", isDark ? "text-white" : "text-slate-900")}>
-          <motion.h1
-            initial={prefersReduced ? false : { opacity: 0, y: 10 }}
-            animate={prefersReduced ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight"
-          >
+        <div className={cx("max-w-[82rem] mx-auto px-4 sm:px-6 lg:px-10 py-24 sm:py-32", isDark ? "text-white" : "text-slate-900")}>
+          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
             Ceremonies crafted with heart
             <span className={cx("block mt-2 text-[clamp(1.25rem,2vw,1.75rem)] font-semibold", isDark ? "text-slate-200" : "text-slate-700")}>
               unique, authentic, unforgettable.
             </span>
-          </motion.h1>
-          <motion.p
-            initial={prefersReduced ? false : { opacity: 0, y: 10 }}
-            animate={prefersReduced ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className={cx("mt-6 text-lg max-w-prose", isDark ? "text-slate-200/90" : "text-slate-700/90")}
-          >
+          </h1>
+          <p className={cx("mt-6 text-lg max-w-prose", isDark ? "text-slate-200/90" : "text-slate-700/90")}>
             West Coast Celebrants, set up by <strong>Carmel Fitzgerald</strong>, offers a complete celebrant service for your most meaningful moments across the West of Ireland. Welcoming people of all faiths, mixed faiths, semi faith, and people with no faith.
-          </motion.p>
-          <motion.div
-            initial={prefersReduced ? false : { opacity: 0, y: 10 }}
-            animate={prefersReduced ? {} : { opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="mt-9 flex flex-wrap gap-3"
-          >
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
             <Link
               to="/contact"
               className={cx(
@@ -88,7 +70,7 @@ export function HomePage() {
             >
               Explore services <ChevronRight className="h-4 w-4" aria-hidden="true" />
             </Link>
-          </motion.div>
+          </div>
           <div className={cx("mt-6 text-sm", isDark ? "text-slate-300" : "text-slate-600")}>
             HSE-registered Wedding Solemniser, endorsed by{" "}
             <a className="underline" href="https://www.futurfaith.com" target="_blank" rel="noreferrer">
@@ -99,7 +81,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 py-12">
+      <section className="max-w-[82rem] mx-auto px-4 sm:px-6 lg:px-10 py-12">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
             { title: "Weddings", copy: "Legal, commitment, and elopement ceremonies.", to: "/weddings" },

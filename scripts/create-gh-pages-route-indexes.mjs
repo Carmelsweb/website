@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync, mkdirSync, readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const DIST_DIR = "dist";
@@ -36,13 +36,42 @@ function toUpperCasePath(path) {
   return segments.length ? `/${segments.join("/")}` : "/";
 }
 
-function writeRouteIndex(path) {
+function withCanonicalTags(html, canonicalPath) {
+  const canonicalUrl = `${SITE_ORIGIN}${canonicalPath}`;
+  let output = html;
+
+  if (output.includes('rel="canonical"')) {
+    output = output.replace(
+      /<link rel="canonical" href="[^"]*" \/>/,
+      `<link rel="canonical" href="${canonicalUrl}" />`
+    );
+  } else {
+    output = output.replace("</head>", `    <link rel="canonical" href="${canonicalUrl}" />\n  </head>`);
+  }
+
+  if (output.includes('property="og:url"')) {
+    output = output.replace(
+      /<meta property="og:url" content="[^"]*" \/>/,
+      `<meta property="og:url" content="${canonicalUrl}" />`
+    );
+  } else {
+    output = output.replace(
+      '<meta property="og:type" content="website" />',
+      '<meta property="og:type" content="website" />\n    <meta property="og:url" content="' + canonicalUrl + '" />'
+    );
+  }
+
+  return output;
+}
+
+function writeRouteIndex(path, canonicalPath, template) {
   const normalized = normalizePath(path);
   if (normalized === "/") return;
 
   const routeDir = join(DIST_DIR, normalized.slice(1));
   mkdirSync(routeDir, { recursive: true });
-  copyFileSync(INDEX_HTML, join(routeDir, "index.html"));
+  const routeHtml = withCanonicalTags(template, canonicalPath);
+  writeFileSync(join(routeDir, "index.html"), routeHtml, "utf8");
 }
 
 if (!existsSync(INDEX_HTML)) {
@@ -54,7 +83,8 @@ if (!existsSync(SITEMAP_PATH)) {
 }
 
 const sitemap = readFileSync(SITEMAP_PATH, "utf8");
-const routes = new Set();
+const baseHtmlTemplate = readFileSync(INDEX_HTML, "utf8");
+const routes = new Map();
 
 for (const match of sitemap.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)) {
   const loc = match[1].trim();
@@ -64,13 +94,16 @@ for (const match of sitemap.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)) {
   const route = normalizePath(rawPath);
   if (route === "/") continue;
 
-  routes.add(route);
-  routes.add(toTitleCasePath(route));
-  routes.add(toUpperCasePath(route));
+  routes.set(route, route);
+  routes.set(toTitleCasePath(route), route);
+  routes.set(toUpperCasePath(route), route);
 }
 
-for (const route of routes) {
-  writeRouteIndex(route);
+// Ensure the root route also has explicit canonical + og:url in generated HTML.
+writeFileSync(INDEX_HTML, withCanonicalTags(baseHtmlTemplate, "/"), "utf8");
+
+for (const [route, canonicalRoute] of routes) {
+  writeRouteIndex(route, canonicalRoute, baseHtmlTemplate);
 }
 
 console.log(`Created static route index files for ${routes.size} paths.`);

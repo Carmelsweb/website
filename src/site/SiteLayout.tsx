@@ -1,9 +1,8 @@
 ﻿import React, { useEffect, useMemo, useState } from "react";
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
 import { Calendar, ChevronDown, Menu, X } from "lucide-react";
 import { useTheme } from "./useTheme";
-import paintedBackground from "../assets/bbf6a4b0-0ef3-409f-8025-2ad9df65a8d3.png";
+import paintedBackground from "../assets/optimized/bbf6a4b0-0ef3-409f-8025-2ad9df65a8d3.webp";
 
 const palette = { navy: "#1c2233", teal: "#5c8a87", gold: "#d4a62a" };
 
@@ -114,11 +113,14 @@ export function SiteLayout() {
           !isDark && "border-slate-200/70"
         )}
       >
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 xl:px-10 h-16">
+        <div className="max-w-[82rem] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-10 h-16">
           <Link to="/" className="flex items-center gap-3 group" aria-label="West Coast Celebrants home">
             <img
-              src="/logo.png"
+              src="/favicon-48x48.png"
               alt="West Coast Celebrants logo"
+              width={48}
+              height={48}
+              decoding="async"
               className="h-9 w-9 rounded-full object-cover ring-1 ring-black/10"
             />
             <span className={cx("font-extrabold tracking-wide", isDark ? "text-white" : "text-slate-900")}>
@@ -209,57 +211,52 @@ export function SiteLayout() {
           </div>
         </div>
 
-        <AnimatePresence>
-          {menuOpen && (
-            <motion.div
-              id="mobile-menu"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className={cx("lg:hidden border-t", isDark ? "border-slate-800 bg-slate-950/95" : "border-slate-200 bg-white/95")}
-            >
-              <div className="px-4 py-4 max-w-7xl mx-auto space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {primaryLinks.map((link) => (
+        {menuOpen && (
+          <div
+            id="mobile-menu"
+            className={cx("lg:hidden border-t", isDark ? "border-slate-800 bg-slate-950/95" : "border-slate-200 bg-white/95")}
+          >
+            <div className="px-4 py-4 max-w-[82rem] mx-auto space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {primaryLinks.map((link) => (
+                  <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
+                    {link.label}
+                  </NavLink>
+                ))}
+              </div>
+              <div>
+                <p className={cx("text-sm uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
+                  Services
+                </p>
+                <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {serviceLinks.map((link) => (
                     <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
                       {link.label}
                     </NavLink>
                   ))}
                 </div>
-                <div>
-                  <p className={cx("text-sm uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
-                    Services
-                  </p>
-                  <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {serviceLinks.map((link) => (
-                      <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
-                        {link.label}
-                      </NavLink>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <p className={cx("text-sm uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
-                    Legal
-                  </p>
-                  <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {legalLinks.map((link) => (
-                      <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
-                        {link.label}
-                      </NavLink>
-                    ))}
-                  </div>
-                </div>
-                <Link
-                  to="/contact"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-4 py-3 rounded-2xl font-semibold text-white shadow-lg shadow-[var(--brand-teal)]/20 bg-gradient-to-r from-[var(--brand-teal)] to-emerald-600"
-                >
-                  <Calendar className="h-4 w-4" aria-hidden="true" /> Inquire now
-                </Link>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <div>
+                <p className={cx("text-sm uppercase tracking-widest", isDark ? "text-slate-400" : "text-slate-500")}>
+                  Legal
+                </p>
+                <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {legalLinks.map((link) => (
+                    <NavLink key={link.to} to={link.to} className={cx("text-base font-medium", navBase)}>
+                      {link.label}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
+              <Link
+                to="/contact"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-4 py-3 rounded-2xl font-semibold text-white shadow-lg shadow-[var(--brand-teal)]/20 bg-gradient-to-r from-[var(--brand-teal)] to-emerald-600"
+              >
+                <Calendar className="h-4 w-4" aria-hidden="true" /> Inquire now
+              </Link>
+            </div>
+          </div>
+        )}
       </header>
 
       <main id="main">
@@ -274,7 +271,7 @@ export function SiteLayout() {
             : "border-slate-200 bg-gradient-to-b from-[#e9f4ff] via-white to-[#f4f8ff]"
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-10 py-10 grid sm:grid-cols-2 gap-6 items-center">
+        <div className="max-w-[82rem] mx-auto px-4 sm:px-6 lg:px-10 py-10 grid sm:grid-cols-2 gap-6 items-center">
           <div>
             <p className="font-semibold">West Coast Celebrants</p>
             <p className={cx("text-base", isDark ? "text-slate-300" : "text-slate-600")}>

@@ -35,13 +35,33 @@
   
     <script>
       (function () {
+        var origin = window.location.origin;
+        var path = window.location.pathname || "/";
         var params = new URLSearchParams(window.location.search);
         var redirect = params.get("redirect");
-        if (redirect) {
-          params.delete("redirect");
-          var newUrl = window.location.origin + redirect;
-          if (params.toString()) newUrl += (redirect.indexOf("?") === -1 ? "?" : "&") + params.toString();
-          window.history.replaceState(null, "", newUrl);
+        if (!redirect) {
+          try {
+            redirect = window.sessionStorage.getItem("spa-redirect-path");
+            if (redirect) window.sessionStorage.removeItem("spa-redirect-path");
+          } catch (e) {
+            // ignore storage access issues
+          }
+        }
+
+        // Keep GitHub Pages fallback redirects out of the public URL.
+        if (redirect) params.delete("redirect");
+
+        var targetPath = redirect || path;
+        if (!targetPath.startsWith("/")) targetPath = "/" + targetPath;
+        if (targetPath !== "/") targetPath = targetPath.replace(/\/+$/, "");
+        targetPath = targetPath.toLowerCase();
+
+        var nextSearch = params.toString();
+        var nextUrl = origin + targetPath + (nextSearch ? "?" + nextSearch : "") + (window.location.hash || "");
+        var currentUrl = origin + path + window.location.search + (window.location.hash || "");
+
+        if (nextUrl !== currentUrl) {
+          window.history.replaceState(null, "", nextUrl);
         }
       })();
     </script>

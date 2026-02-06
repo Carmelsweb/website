@@ -10,9 +10,12 @@ type PageMeta = {
 const SITE_NAME = "West Coast Celebrants";
 const DEFAULT_OG_IMAGE = "/og-logo.png";
 const FALLBACK_BASE_URL = "https://www.westcoastcelebrants.ie";
+const isLocalHost =
+  typeof window !== "undefined" &&
+  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1");
 const BASE_URL =
   import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") ||
-  (typeof window !== "undefined" ? window.location.origin : FALLBACK_BASE_URL);
+  (isLocalHost && typeof window !== "undefined" ? window.location.origin : FALLBACK_BASE_URL);
 
 function setMetaTag(attr: "name" | "property", key: string, value: string) {
   const selector = `meta[${attr}="${key}"]`;
