@@ -1,9 +1,9 @@
-import { Mail, Phone } from "lucide-react";
+﻿import { Mail, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContactForm } from "../site/ContactForm";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
-import { useTheme } from "../site/theme";
+import { useTheme } from "../site/useTheme";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -57,7 +57,7 @@ export function ContactPage() {
               >
                 Facebook
               </a>
-              <span>·</span>
+              <span>Â·</span>
               <a
                 className="underline underline-offset-2"
                 href="https://www.facebook.com/share/r/18Fmc3ioNA/"
@@ -66,7 +66,7 @@ export function ContactPage() {
               >
                 Facebook reel
               </a>
-              <span>·</span>
+              <span>Â·</span>
               <a
                 className="underline underline-offset-2"
                 href="https://www.instagram.com/westcoastcelebrants.carmel?utm_source=qr&igsh=OXJqb25idmw1eHpy"

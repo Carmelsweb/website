@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+﻿import { motion } from "framer-motion";
 import { Calendar, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useTheme } from "../site/theme";
+import { useTheme } from "../site/useTheme";
 import { usePrefersReducedMotion } from "../site/usePrefersReducedMotion";
 import { usePageMeta } from "../site/usePageMeta";
 

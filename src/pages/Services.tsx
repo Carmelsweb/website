@@ -1,8 +1,8 @@
-import { Baby, BookOpen, ChevronRight, Feather, Heart, Sparkles } from "lucide-react";
+﻿import { Baby, BookOpen, ChevronRight, Feather, Heart, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
-import { useTheme } from "../site/theme";
+import { useTheme } from "../site/useTheme";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -19,13 +19,13 @@ const services = [
     title: "Commitment Weddings",
     icon: Sparkles,
     to: "/weddings",
-    description: "Celebrate your bond at home, even if you marry legally elsewhere.",
+    description: "Celebrate your love and commitment without the legal paperwork.",
   },
   {
     title: "Elopement Weddings",
     icon: Feather,
     to: "/weddings",
-    description: "Romantic, intimate vows for couples seeking adventure or privacy.",
+    description: "Feels right just for you.",
   },
   {
     title: "Naming Ceremonies",

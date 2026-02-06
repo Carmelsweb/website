@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
+﻿import { Link } from "react-router-dom";
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
-import { useTheme } from "../site/theme";
+import { useTheme } from "../site/useTheme";
 import unityCandleImg from "../assets/Unity Candle.jpg";
 import sandBlendingImg from "../assets/Sand Blending.jpg";
 import pinningColoursImg from "../assets/Pinning the colours.jpg";
@@ -283,10 +283,10 @@ export function WeddingsPage() {
 
         <div className="mt-6 space-y-4">
           <p>
-            Commitment Weddings: share your commitment with friends and family. If you plan to marry legally elsewhere, this is a perfect way to celebrate with loved ones at home.
+            Commitment Weddings: Celebrate your love and commitment without the legal paperwork.
           </p>
           <p>
-            Elopement Weddings: a romantic choice for couples seeking adventure or privacy. Whether planned quietly or well in advance, we create an intimate ceremony that feels just for you.
+            Elopement Weddings: Feels right just for you.
           </p>
           <p>
             The difference between these events is that commitment weddings are not legally binding. If it is not practical for a couple to have a legal wedding, a commitment wedding is a perfect way to publicly declare your commitment and celebrate your unique love.
