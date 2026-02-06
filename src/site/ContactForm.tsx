@@ -139,7 +139,7 @@ export function ContactForm() {
         >
           <Mail className="h-4 w-4" aria-hidden="true" /> {status === "sending" ? "Sending..." : "Send enquiry"}
         </button>
-        <p className={cx("text-xs break-words", isDark ? "text-slate-300" : "text-slate-600")}>
+        <p className={cx("text-sm break-words", isDark ? "text-slate-300" : "text-slate-600")}>
           Or email us at <a className="underline break-all" href="mailto:westcoastcelebrants@gmail.com">westcoastcelebrants@gmail.com</a>
         </p>
       </div>
