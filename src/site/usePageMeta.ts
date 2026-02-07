@@ -16,6 +16,14 @@ const isLocalHost =
 const BASE_URL =
   isLocalHost && typeof window !== "undefined" ? window.location.origin : CANONICAL_BASE_URL;
 
+function toCanonicalPath(path: string) {
+  const clean = (path.split(/[?#]/, 1)[0] || "/").trim();
+  let normalized = clean.startsWith("/") ? clean : `/${clean}`;
+  normalized = normalized.replace(/\/{2,}/g, "/");
+  if (normalized === "" || normalized === "/") return "/";
+  return normalized.endsWith("/") ? normalized : `${normalized}/`;
+}
+
 function setMetaTag(attr: "name" | "property", key: string, value: string) {
   const selector = `meta[${attr}="${key}"]`;
   let tag = document.head.querySelector<HTMLMetaElement>(selector);
@@ -42,7 +50,7 @@ export function usePageMeta({ title, description, path, robots }: PageMeta) {
     const fullTitle = `${title} | ${SITE_NAME}`;
     document.title = fullTitle;
 
-    const canonical = `${BASE_URL}${path}`;
+    const canonical = `${BASE_URL}${toCanonicalPath(path)}`;
     setLinkTag("canonical", canonical);
 
     setMetaTag("name", "description", description);

@@ -13,6 +13,11 @@ function normalizePath(path) {
   return normalized === "" ? "/" : normalized;
 }
 
+function toCanonicalPath(path) {
+  const normalized = normalizePath(path);
+  return normalized === "/" ? "/" : `${normalized}/`;
+}
+
 function toTitleCasePath(path) {
   const segments = path
     .replace(/^\/+/, "")
@@ -37,7 +42,7 @@ function toUpperCasePath(path) {
 }
 
 function withCanonicalTags(html, canonicalPath) {
-  const canonicalUrl = `${SITE_ORIGIN}${canonicalPath}`;
+  const canonicalUrl = `${SITE_ORIGIN}${toCanonicalPath(canonicalPath)}`;
   let output = html;
 
   if (output.includes('rel="canonical"')) {
