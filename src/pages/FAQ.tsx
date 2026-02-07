@@ -1,6 +1,7 @@
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/useTheme";
+import { useJsonLd } from "../site/useJsonLd";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -8,12 +9,56 @@ function cx(...parts: Array<string | false | null | undefined>) {
 
 export function FAQPage() {
   const { isDark } = useTheme();
+  const questions = [
+    {
+      question: "How far in advance should we book?",
+      answer: "As soon as you have a venue or date in mind. Popular dates book quickly, so get in touch and we will check availability.",
+    },
+    {
+      question: "Is there a legal notice period in Ireland?",
+      answer:
+        "Yes. Couples must give at least 3 months civil notice to the HSE before a legal wedding. We will guide you through the paperwork, ID requirements, and appointment booking, including for destination couples travelling to Ireland.",
+    },
+    {
+      question: "How quickly do you respond?",
+      answer: "We reply within 24 hours. For urgent Celebration of Life enquiries, please call +353 87 130 2029.",
+    },
+    {
+      question: "Do you travel?",
+      answer: "Yes. Westport based, officiating across the West of Ireland (Mayo, Galway, Sligo, Roscommon and beyond by arrangement).",
+    },
+    {
+      question: "Do you work with LGBTQ+ couples?",
+      answer: "Absolutely. All couples are welcome — LGBTQ+, intercultural, interfaith, and secular ceremonies.",
+    },
+    {
+      question: "How fast can a Celebration of Life be arranged?",
+      answer:
+        "We prioritise these enquiries and draft quickly. Please call for urgent dates; memorial services can also be planned weeks or months after a passing.",
+    },
+  ];
 
   usePageMeta({
     title: "FAQ",
     description: "Common questions about ceremonies with West Coast Celebrants.",
     path: "/faq",
   });
+
+  useJsonLd(
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: questions.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    }),
+    "faq"
+  );
 
   return (
     <Section title="FAQ" kicker="Good to know">
