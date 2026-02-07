@@ -76,24 +76,6 @@ export function SiteLayout() {
     };
   }, [menuOpen]);
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "application/ld+json";
-    script.innerHTML = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Carmel Fitzgerald",
-      jobTitle: "Wedding Celebrant & Solemniser",
-      worksFor: { "@type": "Organization", name: "West Coast Celebrants" },
-      email: "mailto:westcoastcelebrants@gmail.com",
-      areaServed: ["County Mayo", "County Galway", "County Sligo", "West of Ireland"],
-    });
-    document.head.appendChild(script);
-    return () => {
-      script.remove();
-    };
-  }, []);
-
   const navBase = useMemo(
     () => (isDark ? "text-slate-200 hover:text-white" : "text-slate-700 hover:text-slate-900"),
     [isDark]

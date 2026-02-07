@@ -238,22 +238,6 @@ const weddingPhotos = [
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  useEffect(() => {
-    const s = document.createElement("script");
-    s.type = "application/ld+json";
-    s.innerHTML = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Carmel Fitzgerald",
-      jobTitle: "Wedding Celebrant & Solemniser",
-      worksFor: { "@type": "Organization", name: "West Coast Celebrants" },
-      email: "mailto:westcoastcelebrants@gmail.com",
-      areaServed: ["County Mayo", "County Galway", "County Sligo", "West of Ireland"],
-    });
-    document.head.appendChild(s);
-    return () => { s.remove(); };
-  }, []);
-
   return (
     <div
       className={cx("min-h-screen", isDark ? "bg-slate-950 text-slate-100" : "bg-white text-slate-900")}
