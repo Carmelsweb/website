@@ -2,6 +2,7 @@ import { Calendar, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../site/useTheme";
 import { usePageMeta } from "../site/usePageMeta";
+import { useJsonLd } from "../site/useJsonLd";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -9,13 +10,40 @@ function cx(...parts: Array<string | false | null | undefined>) {
 
 export function HomePage() {
   const { isDark } = useTheme();
+  const description =
+    "West Coast Celebrants, led by Carmel Fitzgerald, creates heartfelt weddings, vow renewals, naming ceremonies, and celebrations of life across the West of Ireland.";
 
   usePageMeta({
     title: "Ceremonies crafted with heart",
-    description:
-      "West Coast Celebrants, led by Carmel Fitzgerald, creates heartfelt weddings, vow renewals, naming ceremonies, and celebrations of life across the West of Ireland.",
+    description,
     path: "/",
   });
+
+  useJsonLd(
+    JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://www.westcoastcelebrants.ie/#professionalservice",
+          name: "West Coast Celebrants",
+          url: "https://www.westcoastcelebrants.ie/",
+          description,
+          logo: "https://www.westcoastcelebrants.ie/og-logo.png",
+          image: "https://www.westcoastcelebrants.ie/og-logo.png",
+          founder: { "@id": "https://www.westcoastcelebrants.ie/#carmel-fitzgerald" },
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.westcoastcelebrants.ie/#carmel-fitzgerald",
+          name: "Carmel Fitzgerald",
+          jobTitle: "Celebrant",
+          worksFor: { "@id": "https://www.westcoastcelebrants.ie/#professionalservice" },
+        },
+      ],
+    }),
+    "home"
+  );
 
   return (
     <>
