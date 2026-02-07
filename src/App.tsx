@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import { ThemeProvider } from "./site/theme";
@@ -26,6 +26,19 @@ const CookiesPage = lazy(() => import("./pages/Cookies").then((m) => ({ default:
 const NotFoundPage = lazy(() => import("./pages/NotFound").then((m) => ({ default: m.NotFoundPage })));
 
 export default function App() {
+  useEffect(() => {
+    const warmRoutes = () => {
+      void import("./pages/About");
+      void import("./pages/Services");
+      void import("./pages/Gallery");
+      void import("./pages/Contact");
+      void import("./pages/FAQ");
+    };
+
+    const timeout = window.setTimeout(warmRoutes, 0);
+    return () => window.clearTimeout(timeout);
+  }, []);
+
   return (
     <ThemeProvider>
       <BrowserRouter>
