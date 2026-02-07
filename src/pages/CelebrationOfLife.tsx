@@ -2,11 +2,11 @@
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/useTheme";
-import ringsOnPillow from "../assets/Rings.jpeg";
-import candleImg from "../assets/Unity Candle.jpg";
-import treeImg from "../assets/Tree.jpg";
-import flowersImg from "../assets/Giving of flowers.jpg";
-import handfastingCelebrate from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (7).jpeg";
+import symbolismOfGiftsImg from "../assets/optimized/Symbolism of gifts.webp";
+import candleImg from "../assets/optimized/Lighting candle.webp";
+import treeImg from "../assets/optimized/Planting tree.webp";
+import flowersImg from "../assets/optimized/Ceremony of the rose.webp";
+import birdReleaseImg from "../assets/optimized/bird Relase.webp";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -17,7 +17,7 @@ const rituals = [
     title: "Symbolism of Gifts",
     body:
       "Before the funeral the family will decide on some items of importance or that held some special place in the life of the deceased. An example of some items that can be brought forward could be a GAA jersey or a photo of the family that cared so deeply about them.",
-    img: ringsOnPillow,
+    img: symbolismOfGiftsImg,
     alt: "Symbolic keepsakes arranged for a ceremony",
   },
   {
@@ -48,8 +48,8 @@ const rituals = [
 Releasing birds during a funeral ceremony can be a very moving experience, as a visual representation that love is stronger than death.
 
 This ritual is placed at the end of the ceremony on most occasions and can really help to uplift those in attendance.`,
-    img: handfastingCelebrate,
-    alt: "Outdoor ceremony moment with greenery backdrop",
+    img: birdReleaseImg,
+    alt: "Bird release at the close of a ceremony",
   },
 ];
 
@@ -95,8 +95,13 @@ export function CelebrationOfLifePage() {
               <summary className="font-semibold cursor-pointer">{title}</summary>
               <p className="mt-2 whitespace-pre-line">{body}</p>
               {img && (
-                <div className="mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10 aspect-[4/3]">
-                  <img src={img} alt={alt ?? title} className="w-full h-full object-cover" loading="lazy" />
+                <div
+                  className={cx(
+                    "mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10",
+                    isDark ? "bg-slate-900/60" : "bg-slate-50"
+                  )}
+                >
+                  <img src={img} alt={alt ?? title} className="mx-auto w-full h-auto max-h-[30rem] object-contain" loading="lazy" />
                 </div>
               )}
             </details>
@@ -121,4 +126,3 @@ export function CelebrationOfLifePage() {
     </>
   );
 }
-

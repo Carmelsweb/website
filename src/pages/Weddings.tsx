@@ -2,25 +2,29 @@
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/useTheme";
-import unityCandleImg from "../assets/Unity Candle.jpg";
-import sandBlendingImg from "../assets/Sand Blending.jpg";
-import pinningColoursImg from "../assets/Pinning the colours.jpg";
-import givingFlowersImg from "../assets/Giving of flowers.jpg";
-import gemStonesImg from "../assets/Gem Stones.jpg";
-import ringsOnPillow from "../assets/Rings.jpeg";
-import lovingCupPhoto from "../assets/LovingCupver2.jpeg";
-import oathingStoneImg from "../assets/OathingStone.jpeg";
-import timeCapsuleImg from "../assets/Time Capsule.jpg";
-import wishingTreeImg from "../assets/Wishingtree.jpeg";
-import plantingTreeImg from "../assets/PlantingTree.jpeg";
-import namePlateImg from "../assets/Name Plate.jpg";
-import handfastingClose from "../assets/WhatsApp Image 2026-01-15 at 19.17.20.jpeg";
-import handfastingGuide from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (1).jpeg";
-import handfastingVows from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (2).jpeg";
-import handfastingRibbons from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (3).jpeg";
-import handfastingMoment from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (5).jpeg";
-import handfastingSmile from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (6).jpeg";
-import handfastingCelebrate from "../assets/WhatsApp Image 2026-01-15 at 19.17.20 (7).jpeg";
+import unityCandleImg from "../assets/optimized/Unity Candle.webp";
+import sandBlendingImg from "../assets/optimized/Sand Blending.webp";
+import pinningColoursImg from "../assets/optimized/Pinning the colours.webp";
+import givingFlowersImg from "../assets/optimized/Giving of flowers.webp";
+import gemStonesImg from "../assets/optimized/Gem Stones.webp";
+import ringWarmingImg from "../assets/optimized/Ring Warming.webp";
+import lovingCupPhoto from "../assets/optimized/LovingCupver2.webp";
+import oathingStoneImg from "../assets/optimized/OathingStone.webp";
+import timeCapsuleImg from "../assets/optimized/Time Capsule.webp";
+import wishingTreeImg from "../assets/optimized/Wishingtree.webp";
+import plantingTreeImg from "../assets/optimized/PlantingTree.webp";
+import symbolismOfGiftsImg from "../assets/optimized/Symbolism of gifts.webp";
+import smudgingSageImg from "../assets/optimized/Smudging of sage.webp";
+import handfastingClose from "../assets/optimized/WhatsApp Image 2026-01-15 at 19.17.20.webp";
+import handfastingGuide from "../assets/optimized/WhatsApp Image 2026-01-15 at 19.17.20 (1).webp";
+import handfastingVows from "../assets/optimized/WhatsApp Image 2026-01-15 at 19.17.20 (2).webp";
+import handfastingRibbons from "../assets/optimized/WhatsApp Image 2026-01-15 at 19.17.20 (3).webp";
+import handfastingMoment from "../assets/optimized/WhatsApp Image 2026-01-15 at 19.17.20 (5).webp";
+import handfastingSmile from "../assets/optimized/WhatsApp Image 2026-01-15 at 19.17.20 (6).webp";
+import handfastingCelebrate from "../assets/optimized/WhatsApp Image 2026-01-15 at 19.17.20 (7).webp";
+import jumpingTheBroomImg from "../assets/optimized/Jumping The Broom.webp";
+import lastKissImg from "../assets/optimized/Last Kiss Before The First Kiss.webp";
+import roseCeremonyImg from "../assets/optimized/The Rose Ceremony.webp";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -54,16 +58,16 @@ At the end of the ceremony, all stones or crystals are placed into a vase or ves
     body: `The wedding rings are tied together on a ribbon or cord, and during the ceremony are passed around to all the guests.
 
 While holding the rings, each guest is asked to bestow a wish or simply their love, a blessing, or a prayer onto them. This can be a beautifully personal way to include guests.`,
-    img: ringsOnPillow,
-    alt: "Wedding rings on a satin pillow ready for ring warming",
+    img: ringWarmingImg,
+    alt: "Wedding rings prepared for the ring warming ritual",
   },
   {
     title: "Symbolism of gifts",
     body: `Family members or friends could come forward during the ceremony, one at a time, each of them holding in their hands an item of importance to the couple.
 
 This enhancement fits best directly after the first part of the Unity Candle enhancement, after the Ring Warming, or even after a first reading early in the ceremony.`,
-    img: namePlateImg,
-    alt: "Personal keepsake displayed during a ceremony",
+    img: symbolismOfGiftsImg,
+    alt: "Symbolic keepsakes arranged for ceremony storytelling",
   },
   {
     title: "Smudging/burning sage",
@@ -74,8 +78,8 @@ A deeply spiritual ritual, this sacred smoke will cleanse and release any negati
 Sage represents clarity, vision, strength and wisdom, the perfect gifts for the first day of the rest of your clients' lives together.
 
 This enhancement is carried out immediately after the welcome and introduction.`,
-    img: handfastingGuide,
-    alt: "Celebrant guiding a ceremonial ritual",
+    img: smudgingSageImg,
+    alt: "Smudging ritual with sage during a ceremony",
   },
   {
     title: "Love story details",
@@ -131,8 +135,8 @@ Gold: signals energy, wealth, intelligence and longevity.`,
   {
     title: "Last Kiss before First Kiss",
     body: `The Last Kiss before First Kiss enhancement can be a very touching and beautiful gift to give to a person or people of significance. It could be from parents, grandparents, children or anybody who has played a pivotal role in the couple's lives leading up to their wedding day. Just before they have their first kiss as a married couple, they can turn to their guests and place a kiss and a hug on that person or persons who they want not only to thank, but to include in a deeply personal way. This incredible moment within the ceremony, and this kiss, could also be a beautiful way of including children in this historic moment in everybody's lives.`,
-    img: handfastingMoment,
-    alt: "Couple sharing a joyful moment during the ceremony",
+    img: lastKissImg,
+    alt: "Last kiss before first kiss ceremony moment",
   },
   {
     title: "The oathing stone",
@@ -165,16 +169,16 @@ The cup itself can come in many forms. Known as a "quaich" in Scotland, it is a 
     body: `An age-old tradition for weddings, Jumping the Broom can be traced back to several cultures and countries. The broom can be a conventional one or can be specially made with significant or personal material from your couple, or their families.
 
 The broom is placed on the floor and in jumping over it, your couple is symbolically jumping from their single lives into a life of married bliss!`,
-    img: handfastingCelebrate,
-    alt: "Couple celebrating at the end of the ceremony",
+    img: jumpingTheBroomImg,
+    alt: "Couple jumping the broom at the end of the ceremony",
   },
   {
     title: "The rose ceremony",
     body: `During the Rose Ceremony, a couple may wordlessly exchange a gift of a rose to each other. This exchange is not only the first gift they will offer each other as a married couple, but it is also a silent "I love you". These beautiful flowers can be pressed and placed in a frame and will remain with the couple as a lasting reminder of the love and commitment they openly shared before their family and loved ones as they became husband and wife, husband and husband, or wife and wife.
 
 If the couple has children, they can also be included and can each be gifted a small flower which can be tucked in amongst the tokens of love, right where they belong.`,
-    img: givingFlowersImg,
-    alt: "Giving of flowers during a ceremony",
+    img: roseCeremonyImg,
+    alt: "Rose ceremony exchange during a wedding",
   },
   {
     title: "The wishing tree",
@@ -208,7 +212,7 @@ const enhancementPhotos = [
   { src: handfastingSmile, alt: "Groom smiling while hands are wrapped with ribbons" },
   { src: handfastingCelebrate, alt: "Couple lift their ribbon-wrapped hands to celebrate" },
   { src: handfastingRibbons, alt: "Handfasting ribbons draping to the ground" },
-  { src: ringsOnPillow, alt: "Wedding rings on a satin pillow ready for ring warming" },
+  { src: ringWarmingImg, alt: "Wedding rings prepared for the ring warming ritual" },
   { src: lovingCupPhoto, alt: "Ceremonial loving cup" },
   { src: unityCandleImg, alt: "Unity candle during a ceremony" },
   { src: sandBlendingImg, alt: "Coloured sand blending ritual display" },
@@ -309,8 +313,13 @@ export function WeddingsPage() {
               <summary className="font-semibold cursor-pointer">{title}</summary>
               <p className="mt-2 whitespace-pre-line">{body}</p>
               {img && (
-                <div className="mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10">
-                  <img src={img} alt={alt ?? title} className="w-full h-64 object-cover" loading="lazy" />
+                <div
+                  className={cx(
+                    "mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10",
+                    isDark ? "bg-slate-900/60" : "bg-slate-50"
+                  )}
+                >
+                  <img src={img} alt={alt ?? title} className="mx-auto w-full h-auto max-h-[30rem] object-contain" loading="lazy" />
                 </div>
               )}
             </details>
@@ -361,4 +370,3 @@ export function WeddingsPage() {
     </>
   );
 }
-

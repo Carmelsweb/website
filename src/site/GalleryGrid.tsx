@@ -91,7 +91,7 @@ export function GalleryGrid({
               <img
                 src={images[activeIndex].src}
                 alt={images[activeIndex].alt}
-                className="max-h-[82vh] w-auto max-w-full rounded-2xl shadow-2xl border border-white/15"
+                className="max-h-[82vh] w-auto max-w-full object-contain rounded-2xl shadow-2xl border border-white/15"
                 loading="eager"
                 decoding="async"
               />

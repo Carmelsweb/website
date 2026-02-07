@@ -2,11 +2,14 @@
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/useTheme";
-import namingFlowers from "../assets/Giving of flowers.jpg";
-import namingCandle from "../assets/Unity Candle.jpg";
-import namingBook from "../assets/SigingBook.jpg";
-import namingSand from "../assets/Sand Blending.jpg";
-import namingTree from "../assets/Tree.jpg";
+import namingFlowers from "../assets/optimized/Rose petal.webp";
+import namingCandle from "../assets/optimized/Dedication candle.webp";
+import namingBook from "../assets/optimized/SigingBook.webp";
+import namingSand from "../assets/optimized/Sand Blending.webp";
+import handAndFootPrintImg from "../assets/optimized/Hand and foot print.webp";
+import memoryBoxImg from "../assets/optimized/Memory box.webp";
+import namingTree from "../assets/optimized/Planting a tree.webp";
+import breadAndSaltImg from "../assets/optimized/Bread and salt.webp";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -46,6 +49,8 @@ Some couples integrate Polaroid photos along with written blessings. A lasting m
     title: "Hand & Footprint Ceremony",
     body:
       "Capture the baby's tiny hands and feet prints during the ceremony. Prints can be added to a memory book or displayed in various ways. Siblings can be involved, making it a touching family moment.",
+    img: handAndFootPrintImg,
+    alt: "Baby hand and footprint keepsake moment",
   },
   {
     title: "Memory Box",
@@ -54,6 +59,8 @@ Some couples integrate Polaroid photos along with written blessings. A lasting m
 Can include scan photos, first items, lock of hair, and more.
 
 A cherished keepsake reflecting on the child's growth.`,
+    img: memoryBoxImg,
+    alt: "Memory box keepsake prepared for a naming ceremony",
   },
   {
     title: "Planting a Tree/Shrub",
@@ -66,6 +73,8 @@ A cherished keepsake reflecting on the child's growth.`,
     title: "Bread & Salt Welcome",
     body:
       "A traditional Balkan ritual symbolising hospitality. Best placed at the start of the ceremony as part of the opening welcome. Parents or guide parents offer baskets of bread and salt to each guest.",
+    img: breadAndSaltImg,
+    alt: "Bread and salt welcome ritual display",
   }
 ];
 
@@ -98,8 +107,13 @@ export function NamingPage() {
               <summary className="font-semibold cursor-pointer">{title}</summary>
               <p className="mt-2 whitespace-pre-line">{body}</p>
               {img && (
-                <div className="mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10 aspect-[4/3]">
-                  <img src={img} alt={alt ?? title} className="w-full h-full object-cover" loading="lazy" />
+                <div
+                  className={cx(
+                    "mt-3 overflow-hidden rounded-xl border border-black/5 dark:border-white/10",
+                    isDark ? "bg-slate-900/60" : "bg-slate-50"
+                  )}
+                >
+                  <img src={img} alt={alt ?? title} className="mx-auto w-full h-auto max-h-[30rem] object-contain" loading="lazy" />
                 </div>
               )}
             </details>
@@ -129,4 +143,3 @@ export function NamingPage() {
     </>
   );
 }
-
