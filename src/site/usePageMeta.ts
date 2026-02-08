@@ -21,7 +21,7 @@ function toCanonicalPath(path: string) {
   let normalized = clean.startsWith("/") ? clean : `/${clean}`;
   normalized = normalized.replace(/\/{2,}/g, "/");
   if (normalized === "" || normalized === "/") return "/";
-  return normalized.endsWith("/") ? normalized.slice(0, -1) : normalized;
+  return normalized.endsWith("/") ? normalized : `${normalized}/`;
 }
 
 function setMetaTag(attr: "name" | "property", key: string, value: string) {

@@ -95,7 +95,7 @@
         var targetPath = redirect || path;
         if (!targetPath.startsWith("/")) targetPath = "/" + targetPath;
         targetPath = targetPath.toLowerCase();
-        if (targetPath.length > 1 && targetPath.endsWith("/")) targetPath = targetPath.slice(0, -1);
+        if (targetPath.length > 1 && !targetPath.endsWith("/")) targetPath = targetPath + "/";
 
         var nextSearch = params.toString();
         var nextUrl = origin + targetPath + (nextSearch ? "?" + nextSearch : "") + (window.location.hash || "");
