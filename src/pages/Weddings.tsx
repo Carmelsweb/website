@@ -301,14 +301,14 @@ export function WeddingsPage() {
 
         <h2 className="text-xl font-semibold mt-10">Wedding ceremony guideline</h2>
         <ul className="list-disc pl-6 space-y-2 mt-4">
-          <li>Opening music - your choice</li>
+          <li>Opening music- your choice</li>
           <li>Introduction - General welcome, words of appreciation for guest who have travelled</li>
-          <li>Candle lighting to remember your dearly departed</li>
+          <li>Candle lighting Oto remember your dearly departed</li>
           <li>Ministers address</li>
-          <li>Reading 1 - Samples provided - your choice</li>
+          <li>Reading 1 - Samples provides - Your choice</li>
           <li>Your love story</li>
           <li>Bespoke blessing</li>
-          <li>Reading 2 - your choice</li>
+          <li>Reading 2 - Your choice</li>
           <li>Reflections - Prayers - Words of wisdom</li>
           <li>Legal declarations and legal vows</li>
           <li>Personal vows</li>
@@ -317,6 +317,7 @@ export function WeddingsPage() {
           <li>First kiss</li>
           <li>Legal signing</li>
         </ul>
+        <p className="mt-4">See enhancements for further inspiration</p>
 
         <h2 className="text-xl font-semibold mt-10">Wedding enhancements</h2>
         <p className="mt-2">Wedding enhancements may include any of the following:</p>
