@@ -10,6 +10,8 @@ import handAndFootPrintImg from "../assets/optimized/Hand and foot print.webp";
 import memoryBoxImg from "../assets/optimized/Memory box.webp";
 import namingTree from "../assets/optimized/Planting a tree.webp";
 import breadAndSaltImg from "../assets/optimized/Bread and salt.webp";
+import babyPhotoImg from "../assets/optimized/Baby.webp";
+import babyNamingPhotoImg from "../assets/optimized/Baby naming ceremony.webp";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -91,6 +93,24 @@ export function NamingPage() {
     <>
       <Section title="Naming ceremonies">
         <p>A naming ceremony welcomes a child with words, promises, and joyful celebration.</p>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2">
+          <figure
+            className={cx(
+              "overflow-hidden rounded-2xl border",
+              isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+            )}
+          >
+            <img src={babyPhotoImg} alt="Sleeping baby portrait" className="w-full h-full object-cover" loading="lazy" />
+          </figure>
+          <figure
+            className={cx(
+              "overflow-hidden rounded-2xl border",
+              isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+            )}
+          >
+            <img src={babyNamingPhotoImg} alt="Parent holding baby during naming ceremony" className="w-full h-full object-cover" loading="lazy" />
+          </figure>
+        </div>
       </Section>
 
       <Section title="Ceremony enhancements">
