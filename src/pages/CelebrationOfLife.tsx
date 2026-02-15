@@ -2,11 +2,12 @@
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/useTheme";
-import symbolismOfGiftsImg from "../assets/optimized/Symbolism of gifts.webp";
+import symbolismOfGiftsImg from "../assets/optimized/Bread and salt.webp";
 import candleImg from "../assets/optimized/Lighting candle.webp";
 import treeImg from "../assets/optimized/Planting tree.webp";
 import flowersImg from "../assets/optimized/Ceremony of the rose.webp";
 import birdReleaseImg from "../assets/optimized/bird Relase.webp";
+import celebrationOfLifePhotoImg from "../assets/optimized/Your funeral.webp";
 
 function cx(...parts: Array<string | false | null | undefined>) {
   return parts.filter(Boolean).join(" ");
@@ -81,6 +82,19 @@ export function CelebrationOfLifePage() {
         <p className="mt-4">
           Traditional funerals may focus more on mourning; a celebration of life ceremony allows us to give thanks for the time spent with the departed loved one.
         </p>
+        <figure
+          className={cx(
+            "mt-6 overflow-hidden rounded-2xl border",
+            isDark ? "border-slate-800 bg-slate-950" : "border-slate-200 bg-white"
+          )}
+        >
+          <img
+            src={celebrationOfLifePhotoImg}
+            alt="Celebrant speaking during a celebration of life ceremony"
+            className="w-full h-auto object-cover"
+            loading="lazy"
+          />
+        </figure>
         <p className="mt-4">
           We prioritise Celebration of Life enquiries so families receive support quickly. Please call +353 87 130 2029 for urgent requests.
         </p>
