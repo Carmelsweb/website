@@ -2,7 +2,7 @@
 import { Section } from "../site/Section";
 import { usePageMeta } from "../site/usePageMeta";
 import { useTheme } from "../site/useTheme";
-import symbolismOfGiftsImg from "../assets/optimized/Bread and salt.webp";
+import symbolismOfGiftsImg from "../assets/optimized/Symbolism of gifts.webp";
 import candleImg from "../assets/optimized/Lighting candle.webp";
 import treeImg from "../assets/optimized/Planting tree.webp";
 import flowersImg from "../assets/optimized/Ceremony of the rose.webp";
